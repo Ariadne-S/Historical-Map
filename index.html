@@ -2,6 +2,19 @@
 	
   <head>
     <title>History's Interactive Map</title>
+    <style type="text/css">
+    .headings {
+		border-radius: 50px 50px 0px 0px;
+		box-shadow: 2px 1px 10px #888888;
+		width: 80%;
+		margin: auto; 
+		text-align:center;
+		background-color: #696969; 
+    }
+	h1, h2 {
+		padding: 14px; 
+	}
+    </style>
   </head>
   <body>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3.min.js"></script>
@@ -10,25 +23,10 @@
     
 	<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="   crossorigin="anonymous"></script>
 	
-    <h1 style= "text-align:center; 
-    		display: block; 
-    		background-color: #696969; 
-    		padding: 14px; 
-    		width: 80%; 
-    		margin: auto; 
-    		border-radius: 50px 50px 0px 0px;
-    		box-shadow: 2px 1px 10px #888888;">
-    	History's Interactive Map</h1>
-    	
-    <h2 style= "text-align:center;
-		display: block;
-		background-color: #696969;
-		padding: 14px;
-		width: 80%;
-		margin: auto;
-		box-shadow: 2px 2px 10px #888888;">
-    	The Long 19th Century</h2>
-
+	<div class="headings">
+    	<h1>History's Interactive Map</h1>
+    	<h2>The Long 19th Century</h2>
+	</div>
 	
     <div id="container" style="margin: auto; padding-right: 20px; width: 70%; height: 600px"></div>
 	

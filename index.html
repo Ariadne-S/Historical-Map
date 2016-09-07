@@ -2,212 +2,26 @@
 	
   <head>
     <title>History's Interactive Map</title>
-    <style type="text/css">
-    .headings {
-		border-radius: 50px 50px 0px 0px;
-		box-shadow: 2px 1px 10px #888888;
-		width: 80%;
-		margin: auto; 
-		text-align:center;
-		background-color: #696969; 
-    }
-	h1, h2 {
-		padding: 14px; 
-	}
-    </style>
+    <link rel="stylesheet" type="text/css" href="styles.css">
   </head>
   <body>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js"></script>
     <script src="./datamaps.world.min.js"></script>
-    
 	<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="   crossorigin="anonymous"></script>
-	
-	<div class="headings">
-    	<h1>History's Interactive Map</h1>
-    	<h2>The Long 19th Century</h2>
-	</div>
-	
-    <div id="container" style="margin: auto; padding-right: 20px; width: 70%; height: 600px"></div>
-	
-	<div id="info" style="position: relative; display: none; margin: auto; z-index: -1; background-color: #D3D3D3; width: 900px; height:600px;"></div>
-	
-	<div id="timeline" style="
-				margin: auto; 
-				background-color: #C0C0C0; 
-				padding: 14px; 
-				width: 80%; 
-				border-radius: 0px 0px 50px 50px;
-				box-shadow: 2px 2px 10px #888888;">
-		
-	</div>
-	
-	<script>
-	
-		//http://datamaps.github.io/
-		//https://github.com/markmarkoh/datamaps/blob/master/README.md#getting-started
-	
-		// Setup all our data
-	
-		var timelineStart = 1789;
-		var timelineEnd = 1914;
-		
-		var events = [
-			{
-				name: "Queen Victoria's Coronation",
-				locations: [{
-					latitude: 51.5074,
-					longitude: 0.1278
-				}],
-				radius: 10,
-				date: new Date(1837, 06, 20),
-				image: "",
-				description: "Blah blah blah blah blah",
-				tags: ['']
-			},
-			{
-				name: "Event 2",
-				locations: [
-					{
-						latitude: 51.5074,
-						longitude: 0.1278
-					},
-					{
-						latitude: -25.2744,
-						longitude: 133.7751
-					}
-				],
-				radius: 10,
-				date: new Date(1837, 06, 20),
-				image: "",
-				description: "Blah blah blah blah blah",
-				tags: ['']
-			},
-			{
-				name: "Event 3",
-				locations: [
-					"USA",
-					"GBR",
-					"AUS",
-				],
-				radius: 10,
-				date: new Date(1837, 06, 20),
-				image: "",
-				description: "Blah blah blah blah blah",
-				tags: ['']
-			},
-			{
-				name: "Event 4",
-				locations: [
-					"FRA",
-					"TRA",
-					"FIN",
-				],
-				radius: 10,
-				date: new Date(1837, 06, 20),
-				image: "",
-				description: "Blah blah blah blah blah",
-				tags: ['']
-			}
-		];
-		
-		// Calculate the timeline segments
-		
-		var timeline = [];
-		
-		var step = 10;
-		for (var year = timelineStart; year < timelineEnd; year += step) {
-			
-			var segment = {
-				start: year,
-				end: year + step,
-				events: []
-			};
-		
-			for (var index = 0; index < events.length; index++) {
-				var event = events[index];
-				
-				if (segment.start < event.date.getFullYear()
-					&& segment.end > event.date.getFullYear()) {
-					
-					segment.events.push(event);
-				}
-			}
-			
-			timeline.push(segment);
-		}
-		
-		// Draw stuff on the Screen
-		
-		var colors = d3.scale.category10();
-		
-		var map = new Datamap({
-			element: document.getElementById('container'),
-			fills: {
-				defaultFill: "#ABDDA4",
-				gt50: colors(Math.random() * 20),
-				eq50: colors(Math.random() * 20),
-				lt25: colors(Math.random() * 10),
-				gt75: colors(Math.random() * 200),
-				lt50: colors(Math.random() * 20),
-				eq0: colors(Math.random() * 1),
-				pink: '#0fa0fa',
-				gt500: colors(Math.random() * 1)
-			}
-		});
-		
-		for (var index = 0; index < timeline.length; index++) {
-			var segment = timeline[index];
-			
-			var segmentDiv = $('<div class="segment"/>');
-			segmentDiv.text(segment.start);
-		
-			for (var eventIndex = 0; eventIndex < segment.events.length; eventIndex++) {
-				var eventInfo = segment.events[eventIndex];
-				
-				var eventDiv = $('<div class="event"/>');
-				eventDiv.text(eventInfo.name);
-				
-				(function(eventInfo) { 
-					eventDiv.click(function(){
-						
-						var locations = eventInfo.locations;
-						if (locations.length == 1) {
-						
-							var location = locations[0];
-						
-							map.bubbles([{
-								name: eventInfo.name,
-								latitude: location.latitude,
-								longitude: location.longitude,
-								radius: eventInfo.radius,
-								fillKey: 'pink'}]);
-						} else if (locations.length == 2) {
-						
-							map.arc([{
-								origin: locations[0],
-								destination: locations[1]
-							}]);
-						} else if (locations.length > 2) {
-						
-							var applyColors = {};
-							for (var i = 0; i < locations.length; i++) {
-								var countryCode = locations[i];
-								
-								applyColors[countryCode] = 'pink';
-							}
 
-							map.updateChoropleth(applyColors);
-						}
-					});
-				})(eventInfo);
-				
-				segmentDiv.append(eventDiv);
-			}
-		
-			$("#timeline").append(segmentDiv);
-		}
-		
-	</script>
+	<div id="page">
+		<div class="headings">
+			<h1>History's Interactive Map</h1>
+			<h2>The Long 19th Century</h2>
+		</div>
+
+		<div id="container" class="svg-container"></div>
+
+		<div id="info"></div>
+		<div id="timeline"></div>
+	</div>
+	
+	<script src="scripts.js"></script>
   </body>
 </html>

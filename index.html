@@ -1,27 +1,70 @@
 <html>
 	
-  <head>
-    <title>History's Interactive Map</title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
-  </head>
-  <body>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js"></script>
-    <script src="./datamaps.world.min.js"></script>
-	<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="   crossorigin="anonymous"></script>
+	<head>
+		<title>History's Interactive Map</title>
+		<link rel="stylesheet" type="text/css" href="styles.css">
+		<link title="timeline-styles" rel="stylesheet" href="https://cdn.knightlab.com/libs/timeline3/latest/css/timeline.css">
+	</head>
+	<body>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js"></script>
+		<script src="./datamaps.world.min.js"></script>
+		<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="   crossorigin="anonymous"></script>
+		<script src="https://cdn.knightlab.com/libs/timeline3/latest/js/timeline.js"></script>
 
-	<div id="page">
-		<div class="headings">
-			<h1>History's Interactive Map</h1>
-			<h2>The Long 19th Century</h2>
+		<div id="page">
+			<div class="headings">
+				<h1>History's Interactive Map</h1>
+				<h2>The Long 19th Century</h2>
+			</div>
+			<div id="container" class="svg-container"></div>
+			<div id="info"></div>
+
+			<div id="timeline">
+				<div id='timeline-embed'></div>
+			</div>
 		</div>
 
-		<div id="container" class="svg-container"></div>
-
-		<div id="info"></div>
-		<div id="timeline"></div>
-	</div>
-	
-	<script src="scripts.js"></script>
-  </body>
+		<script src="scripts.js"></script>
+		
+		<script type="text/javascript">
+			var timeline_json = {
+    "title": {
+        "text": {
+          "headline": "Whitney Houston<br/> 1963 - 2012",
+          "text": "<p>Houston's voice caught the imagination of the world propelling her to superstardom at an early age becoming one of the most awarded performers of our time. This is a look into the amazing heights she achieved and her personal struggles with substance abuse and a tumultuous marriage.</p>"
+        }
+    },
+    "events": [
+      {
+        "media": {
+          "url": "",
+          "caption": "Ahahahahh",
+          "credit": "Credit"
+        },
+        "start_date": {
+          "month": "8",
+          "day": "9",
+          "year": "1963"
+        },
+		"end_date": {
+          "month": "8",
+          "day": "9",
+          "year": "1964"
+        },
+		
+        "text": {
+          "headline": "A Musical Heritage",
+          "text": "<p>Born in New Jersey on August 9th, 1963, Houston grew up surrounded by the music business. Her mother is gospel singer Cissy Houston and her cousins are Dee Dee and Dionne Warwick.</p>"
+        }
+      }
+    ]
+};
+			var timeline = new TL.Timeline('timeline-embed', timeline_json);
+			
+			timeline.on("change", function(data) {
+				console.log(data);
+			});
+		</script>
+	</body>
 </html>

@@ -164,5 +164,5 @@ for (var index = 0; index < timeline.length; index++) {
 		segmentDiv.append(eventDiv);
 	}
 
-	$("#timeline").append(segmentDiv);
+	//$("#timeline").append(segmentDiv);
 }

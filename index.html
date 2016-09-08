@@ -8,10 +8,15 @@
 	<body>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js"></script>
-		<script src="./datamaps.world.min.js"></script>
 		<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="   crossorigin="anonymous"></script>
 		<script src="https://cdn.knightlab.com/libs/timeline3/latest/js/timeline.js"></script>
+		<script src="./datamaps.world.min.js"></script>
+		<script src="./papaparse.min.js"></script>
 
+		<link id="csvData" rel="import" href="./eventData.csv"/>
+		
+		
+		
 		<div id="page">
 			<div class="headings">
 				<h1>History's Interactive Map</h1>
@@ -26,45 +31,5 @@
 		</div>
 
 		<script src="scripts.js"></script>
-		
-		<script type="text/javascript">
-			var timeline_json = {
-    "title": {
-        "text": {
-          "headline": "Whitney Houston<br/> 1963 - 2012",
-          "text": "<p>Houston's voice caught the imagination of the world propelling her to superstardom at an early age becoming one of the most awarded performers of our time. This is a look into the amazing heights she achieved and her personal struggles with substance abuse and a tumultuous marriage.</p>"
-        }
-    },
-    "events": [
-      {
-        "media": {
-          "url": "",
-          "caption": "Ahahahahh",
-          "credit": "Credit"
-        },
-        "start_date": {
-          "month": "8",
-          "day": "9",
-          "year": "1963"
-        },
-		"end_date": {
-          "month": "8",
-          "day": "9",
-          "year": "1964"
-        },
-		
-        "text": {
-          "headline": "A Musical Heritage",
-          "text": "<p>Born in New Jersey on August 9th, 1963, Houston grew up surrounded by the music business. Her mother is gospel singer Cissy Houston and her cousins are Dee Dee and Dionne Warwick.</p>"
-        }
-      }
-    ]
-};
-			var timeline = new TL.Timeline('timeline-embed', timeline_json);
-			
-			timeline.on("change", function(data) {
-				console.log(data);
-			});
-		</script>
 	</body>
 </html>

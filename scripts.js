@@ -3,93 +3,117 @@
 
 // Setup all our data
 
+var allEvent = null;
 var timelineStart = 1789;
 var timelineEnd = 1914;
 
-var events = [
-	{
-		name: "Queen Victoria's Coronation",
-		locations: [{
-			latitude: 51.5074,
-			longitude: 0.1278
-		}],
-		radius: 10,
-		date: new Date(1837, 06, 20),
-		image: "",
-		description: "Blah blah blah blah blah",
-		tags: ['']
-	},
-	{
-		name: "Event 2",
-		locations: [
-			{
-				latitude: 51.5074,
-				longitude: 0.1278
-			},
-			{
-				latitude: -25.2744,
-				longitude: 133.7751
-			}
-		],
-		radius: 10,
-		date: new Date(1837, 06, 20),
-		image: "",
-		description: "Blah blah blah blah blah",
-		tags: ['']
-	},
-	{
-		name: "Event 3",
-		locations: [
-			"USA",
-			"GBR",
-			"AUS",
-		],
-		radius: 10,
-		date: new Date(1837, 06, 20),
-		image: "",
-		description: "Blah blah blah blah blah",
-		tags: ['']
-	},
-	{
-		name: "Event 4",
-		locations: [
-			"FRA",
-			"TRA",
-			"FIN",
-		],
-		radius: 10,
-		date: new Date(1837, 06, 20),
-		image: "",
-		description: "Blah blah blah blah blah",
-		tags: ['']
+var results = Papa.parse("eventData.csv", {
+	download: true,
+	header: true,
+	skipEmptyLines: true,
+	complete: function(results) {
+		
+		populateTimeline(results.data);
+		
 	}
-];
+});
 
-// Calculate the timeline segments
-
-var timeline = [];
-
-var step = 10;
-for (var year = timelineStart; year < timelineEnd; year += step) {
+function parseDate(dateString) {
 	
-	var segment = {
-		start: year,
-		end: year + step,
-		events: []
+	if (dateString == null || dateString == "") {
+		return null
+	}
+	
+	var dateParts = dateString.split("/");
+	
+	if (dateParts.length == 0) {
+		return null;
+	}
+	
+	var dateDto = {};
+	
+	if (dateParts.length >= 1) {
+		dateDto.year = dateParts[0];
+	}
+	
+	if (dateParts.length >= 2) {
+		dateDto.month = dateParts[1];
+	}
+	
+	if (dateParts.length >= 3) {
+		dateDto.day = dateParts[2];
+	}
+
+	return dateDto;
+}
+
+function populateTimeline(data) {
+	
+	for (var i = 0; i < data.length; i++) {
+		data[i].id = i;
+	}
+	
+	allEvent = data;
+	
+	var timelineEvents = data.map(function (row) {
+		
+		var timelineEvent = {
+			"media": {
+				"url": row.Image,
+				 "caption": "Ahahahahh",
+				"credit": "Credit"
+			},
+			"text": {
+				"headline": row.Title,
+				"text": "gfhjfghdfg"
+			}
+		}
+		
+		timelineEvent["start_date"] = parseDate(row.StartDate);
+		
+		var endDate = parseDate(row.EndDate);
+		if (endDate) {
+			timelineEvent["end_date"] = endDate;
+		}
+	
+		return timelineEvent;
+	});
+	
+	console.log(timelineEvents);
+	updateTimeline(timelineEvents);
+}
+
+function updateTimeline(timelineEvents) {
+
+	var timeline_json = {
+		"title": {
+			"text": {
+			  "headline": "Whitney Houston<br/> 1963 - 2012",
+			  "text": "<p>Houston's voice caught the imagination of the world propelling her to superstardom at an early age becoming one of the most awarded performers of our time. This is a look into the amazing heights she achieved and her personal struggles with substance abuse and a tumultuous marriage.</p>"
+			}
+		},
+		"events": timelineEvents
 	};
 
-	for (var index = 0; index < events.length; index++) {
-		var event = events[index];
+	//console.log(JSON.stringify(timeline_json, null, ' '));
+
+	var additionalOptions = {
+		start_at_slide:     10,                            //OPTIONAL START AT SPECIFIC SLIDE
+		start_zoom_adjust:  4                            //OPTIONAL TWEAK THE DEFAULT ZOOM LEVEL
 		
-		if (segment.start < event.date.getFullYear()
-			&& segment.end > event.date.getFullYear()) {
-			
-			segment.events.push(event);
-		}
-	}
+		//start_at_end: true,
+		//default_bg_color: {r:0, g:0, b:0},
+		//timenav_height: 250
+	  }
 	
-	timeline.push(segment);
+	var timeline = new TL.Timeline('timeline-embed', timeline_json, additionalOptions);
+	
+	timeline.on("change", function(data) {
+		console.log(data);
+	});
+
 }
+
 
 // Draw stuff on the Screen
 
@@ -115,18 +139,8 @@ d3.select(window).on('resize', function() {
 	map.resize();
 });
 
-for (var index = 0; index < timeline.length; index++) {
-	var segment = timeline[index];
-	
-	var segmentDiv = $('<div class="segment"/>');
-	segmentDiv.text(segment.start);
 
-	for (var eventIndex = 0; eventIndex < segment.events.length; eventIndex++) {
-		var eventInfo = segment.events[eventIndex];
-		
-		var eventDiv = $('<div class="event"/>');
-		eventDiv.text(eventInfo.name);
-		
+/*
 		(function(eventInfo) { 
 			eventDiv.click(function(){
 				
@@ -160,9 +174,4 @@ for (var index = 0; index < timeline.length; index++) {
 				}
 			});
 		})(eventInfo);
-		
-		segmentDiv.append(eventDiv);
-	}
-
-	//$("#timeline").append(segmentDiv);
-}
+*/

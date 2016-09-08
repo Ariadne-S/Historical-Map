@@ -72,13 +72,6 @@ h2 {
 
 
 #timeline-embed, 
-#timeline-embed > div,
-#timeline-embed > div > div,
-#timeline-embed > div > div > div,
-#timeline-embed > div > div > div > div,
-#timeline-embed > div > div > div > div > div,
-#timeline-embed > div > div > div > div > div > div,
-#timeline-embed > div > div > div > div > div > div > div
 
 {
 	background: transparent !important;

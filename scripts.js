@@ -132,28 +132,20 @@ function populateTimeline(data) {
 function updateTimeline(timelineEvents) {
 
 	var timeline_json = {
-		"title": {
-			"text": {
-			  "headline": "Whitney Houston<br/> 1963 - 2012",
-			  "text": "<p>Houston's voice caught the imagination of the world propelling her to superstardom at an early age becoming one of the most awarded performers of our time. This is a look into the amazing heights she achieved and her personal struggles with substance abuse and a tumultuous marriage.</p>"
-			}
-		},
 		"events": timelineEvents
 	};
 
 	//console.log(JSON.stringify(timeline_json, null, ' '));
 
 	var additionalOptions = {
-		start_at_slide:     10,  //OPTIONAL START AT SPECIFIC SLIDE
-		//start_zoom_adjust:  4    //OPTIONAL TWEAK THE DEFAULT ZOOM LEVEL
-
-		//start_at_end: true,
-		//default_bg_color: {r:0, g:0, b:0},
+		initial_zoom: 4,
+		dragging: true,
+		start_at_slide: 2
 		//timenav_height: 250
-	  }
-	
+	};
+
 	var timeline = new TL.Timeline('timeline-embed', timeline_json, additionalOptions);
-	
+
 	timeline.on("change", function(data) {
 
 		var id = parseInt(data.unique_id);

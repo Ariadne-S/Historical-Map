@@ -3,11 +3,15 @@
 
 // Setup all our data
 
+var rawEvents = null;
 var alpha2toLatLong = null;
 var codeMap = null;
+
 var allEvents = null;
 var timelineStart = 1789;
 var timelineEnd = 1914;
+
+var selections = {};
 
 var results = Papa.parse("eventData.csv", {
 	download: true,
@@ -15,11 +19,12 @@ var results = Papa.parse("eventData.csv", {
 	skipEmptyLines: true,
 
 	complete: function(results) {
-		
-		$.getJSON("countrycode-latlong-array.json", function(data) {
-			alpha2toLatLong = data;
-			
-			Papa.parse("code-map.csv", {
+		rawEvents = results.data;
+		TryLoad();
+	}
+});
+
+Papa.parse("code-map.csv", {
 				download: true,
 				header: true,
 				skipEmptyLines: true,
@@ -31,15 +36,23 @@ var results = Papa.parse("eventData.csv", {
 					for (var i = 0; i < mappingData.length; i++) {
 						codeMap[mappingData[i].alpha3] = mappingData[i].alpha2;
 					}
-
-					// Events
-					populateTimeline(results.data);
+					TryLoad();
 				}
 			});
-		});
-	}
-});
 
+$.getJSON("countrycode-latlong-array.json", function(data) {
+			alpha2toLatLong = data;
+			TryLoad();
+		});
+
+function TryLoad()
+{
+	if (alpha2toLatLong && codeMap && rawEvents) {
+		populateTimeline(rawEvents);
+	}
+}
+		
+		
 function GetLocForCode(alpha3)
 {
 	var alpha2 = codeMap[alpha3];
@@ -131,8 +144,8 @@ function updateTimeline(timelineEvents) {
 	//console.log(JSON.stringify(timeline_json, null, ' '));
 
 	var additionalOptions = {
-		start_at_slide:     10,                            //OPTIONAL START AT SPECIFIC SLIDE
-		start_zoom_adjust:  4                            //OPTIONAL TWEAK THE DEFAULT ZOOM LEVEL
+		start_at_slide:     10,  //OPTIONAL START AT SPECIFIC SLIDE
+		//start_zoom_adjust:  4    //OPTIONAL TWEAK THE DEFAULT ZOOM LEVEL
 
 		//start_at_end: true,
 		//default_bg_color: {r:0, g:0, b:0},
@@ -151,60 +164,97 @@ function updateTimeline(timelineEvents) {
 
 }
 
+function ensureLatLong(location) {
+	var loc = null;
+	
+	location = location.trim();
+	
+	if (location.length == 3) {
+		loc = GetLocForCode(location);
+	} else {
+		var locParts = location.split(",");
+		loc = {
+			latitude: parseFloat(locParts[0]),
+			longitude: parseFloat(locParts[1])
+		};
+	}
+	return loc;
+}
+
 function displayEventOnMap(eventData)
 {
+	if (!eventData) return;
+	
 	var location = eventData.Location;
 	
 	var parts = location.split(";");
 	
+	for (var i = 0; i < parts.length; i++) {
+		parts[i] = parts[i].trim();
+	}
+
+	var prevColors = selections.choropleth;
+	for (var name in prevColors) {
+		if (prevColors.hasOwnProperty(name)) {
+			prevColors[name] = '#ABDDA4';
+		}
+	}
+	map.updateChoropleth(prevColors);
+
+	selections.bubbles = [];
+	selections.arcs = [];
+	selections.choropleth = {};
+
 	var type = null;
 	if (parts.length == 1) {
 		type = "bubble";
 		
-		var loc = null;
 		var first = parts[0];
-		if (first.length == 3) {
-			loc = GetLocForCode(first);
-		} else {
-			var locParts = location.split(",");
-			loc = {
-				latitude: parseFloat(locParts[0]),
-				longitude: parseFloat(locParts[1])
-			};
-		}
+		var loc = ensureLatLong(first);
 		
 		var radius = 10;
 		if (eventData.radius) {
 			radius = parseInt(eventData.radius);
 		}
 
-		map.bubbles([{
+		selections.bubbles = [{
 			name: eventData.title,
 			latitude: loc.latitude,
 			longitude: loc.longitude,
 			radius: radius,
-			fillKey: 'pink'
-		}]);
-		
+			fillKey: 'daniel'
+		}];
+
 	} else if (parts.length == 2) {
 		type = "arc";
+		
+		var origin = parts[0];
+		var origin = ensureLatLong(origin);
+		
+		var destination = parts[1];
+		var destination = ensureLatLong(destination);
+		
+		selections.arcs = [{
+			origin: origin,
+			destination: destination
+		}];
+
 	} else if (parts.length > 2) {
 		type = "fill";
-	}
-
-	//1.2,12.1;AUD
-	
-	
-	//GetLocForCode
-	
-	map.arc([{
-		origin: {
-			country: "AUD"
-		},
-		destination: {
-			country: "USA"
+		
+		var applyColors = {};
+		for (var i = 0; i < parts.length; i++) {
+			var countryCode = parts[i];
+			
+			applyColors[countryCode] = '#5392c1';
 		}
-	}]);
+
+		selections.choropleth = applyColors;
+	}
+	
+	map.bubbles(selections.bubbles);
+	map.arc(selections.arcs);
+	map.updateChoropleth(selections.choropleth);
 }
 
 // Draw stuff on the Screen
@@ -216,54 +266,10 @@ var map = new Datamap({
 	responsive: true,
 	fills: {
 		defaultFill: "#ABDDA4",
-		gt50: colors(Math.random() * 20),
-		eq50: colors(Math.random() * 20),
-		lt25: colors(Math.random() * 10),
-		gt75: colors(Math.random() * 200),
-		lt50: colors(Math.random() * 20),
-		eq0: colors(Math.random() * 1),
-		pink: '#0fa0fa',
-		gt500: colors(Math.random() * 1)
+		daniel: "#5392c1"
 	}
 });
 
 d3.select(window).on('resize', function() {
 	map.resize();
 });
-
-
-/*
-		(function(eventInfo) { 
-			eventDiv.click(function(){
-				
-				var locations = eventInfo.locations;
-				if (locations.length == 1) {
-				
-					var location = locations[0];
-				
-					map.bubbles([{
-						name: eventInfo.name,
-						latitude: location.latitude,
-						longitude: location.longitude,
-						radius: eventInfo.radius,
-						fillKey: 'pink'}]);
-				} else if (locations.length == 2) {
-				
-					map.arc([{
-						origin: locations[0],
-						destination: locations[1]
-					}]);
-				} else if (locations.length > 2) {
-				
-					var applyColors = {};
-					for (var i = 0; i < locations.length; i++) {
-						var countryCode = locations[i];
-						
-						applyColors[countryCode] = 'pink';
-					}
-
-					map.updateChoropleth(applyColors);
-				}
-			});
-		})(eventInfo);
-*/

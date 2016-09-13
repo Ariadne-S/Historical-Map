@@ -11,6 +11,8 @@ var allEvents = null;
 var timelineStart = 1789;
 var timelineEnd = 1914;
 var _timeline = null;
+var _map = null;
+var _svg = null;
 
 var selections = {};
 
@@ -201,7 +203,7 @@ function displayEventOnMap(eventData)
 			prevColors[name] = '#ABDDA4';
 		}
 	}
-	map.updateChoropleth(prevColors);
+	_map.updateChoropleth(prevColors);
 
 	selections.bubbles = [];
 	selections.arcs = [];
@@ -254,27 +256,13 @@ function displayEventOnMap(eventData)
 		selections.choropleth = applyColors;
 	}
 	
-	map.bubbles(selections.bubbles);
-	map.arc(selections.arcs);
-	map.updateChoropleth(selections.choropleth);
+	_map.bubbles(selections.bubbles);
+	_map.arc(selections.arcs);
+	_map.updateChoropleth(selections.choropleth);
+
+	var transform = _svg.selectAll("g.datamaps-subunits").attr("transform");
+	_svg.selectAll("g").attr("transform", transform);
 }
-
-// Draw stuff on the Screen
-
-var colors = d3.scale.category10();
-
-var map = new Datamap({
-	element: document.getElementById('container'),
-	responsive: true,
-	fills: {
-		defaultFill: "#ABDDA4",
-		daniel: "#5392c1"
-	}
-});
-
-d3.select(window).on('resize', function() {
-	map.resize();
-});
 
 var timerId = null;
 
@@ -295,6 +283,90 @@ $(function() {
 			//_timeline.goToStart();
 			playSlideShow();
 		}
+	});
+
+		
+	// Draw stuff on the Screen
+
+	var container = $("#container");
+
+	var colors = d3.scale.category10();
+
+	var mapWidth = 2000;
+	var mapHeight = 2000 * (2/3);
+
+	var gElem = null;
+
+	function updatePan(panX, panY, scale, remember) {
+
+		var portWidth = container.width()
+		var portHeight = container.height();
+
+		var widthDiff = mapWidth - portWidth;
+		var translationOffsetX = widthDiff / 2;
+
+		var heightDiff = mapHeight - portHeight;
+		var translationOffsetY = heightDiff / 2;
+
+		// TODO: Bounds Checking!
+
+		//var boundX = Math.max(0, Math.min(panX, mapWidth - portWidth));
+		//console.log(boundX + ", " + panX + ", " + (mapWidth - portWidth));
+
+		if (remember) {
+			remember(panX, panY);
+		}
+
+		var tx = panX - translationOffsetX;
+		var ty = panY - translationOffsetY;
+
+		_svg.selectAll("g")
+			.attr("transform", [
+				"translate(" + [tx, ty] + ")",
+					"scale(" + scale + ")"
+				].join(" "));
+	}
+
+	var map = new Datamap({
+		element: document.getElementById('container'),
+		//responsive: true,
+		width: mapWidth,
+		height: mapHeight,
+		fills: {
+			defaultFill: "#ABDDA4",
+			daniel: "#5392c1"
+		},
+		done: function(datamap) {
+
+			_svg = datamap.svg;
+
+			updatePan(0, 0, 1);
+
+			var zoom = d3.behavior.zoom()
+			// only scale up, e.g. between 1x and 2x
+			.scaleExtent([1, 2])
+			.on("zoom", function() {
+
+				var e = d3.event;
+				var panX = e.translate[0];
+				var panY = e.translate[1];
+
+				updatePan(panX, panY, e.scale, function(x, y) {
+					zoom.translate([x, y]);
+				});
+				
+			});
+
+		datamap.svg.call(zoom);
+		}
+	});
+
+	_map = map;
+
+	d3.select(window).on('resize', function() {
+		//map.resize();
+
+		updatePan(0, 0, 1);
 	});
 
 });

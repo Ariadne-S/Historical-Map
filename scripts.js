@@ -304,13 +304,15 @@ $(function() {
 
 	function updatePan(panX, panY, scale, remember) {
 
+		scale = scale * .83;
+
 		var portWidth = container.width()
 		var portHeight = container.height();
 
-		var widthDiff = mapWidth - portWidth;
+		var widthDiff = mapWidth * scale - portWidth;
 		var translationOffsetX = widthDiff / 2;
 
-		var heightDiff = mapHeight - portHeight;
+		var heightDiff = mapHeight * scale - portHeight;
 		var translationOffsetY = heightDiff / 2;
 
 		// TODO: Bounds Checking!
@@ -334,13 +336,18 @@ $(function() {
 
 	var map = new Datamap({
 		element: document.getElementById('container'),
-		//responsive: true,
+		//responsive: true,x
 		width: mapWidth,
 		height: mapHeight,
 		fills: {
 			defaultFill: "#ABDDA4",
 			daniel: "#5392c1"
 		},
+
+		geographyConfig: {
+			hideAntarctica: false
+		},
+
 		done: function(datamap) {
 
 			_svg = datamap.svg;

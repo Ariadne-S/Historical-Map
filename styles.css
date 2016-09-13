@@ -39,6 +39,10 @@ h2 {
 	*/
 }
 
+#errors {
+	color: red
+}
+
 #info {
 	position: relative;
 	display: none;

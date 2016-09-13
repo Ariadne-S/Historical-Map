@@ -63,15 +63,19 @@ function GetLocForCode(alpha3)
 	};
 }
 
-function parseDate(dateString) {
+function parseDate(dateString, needed) {
 	
 	if (dateString == null || dateString == "") {
+		if (needed) {
+			console.log("NoDate");
+		}
 		return null
 	}
 	
 	var dateParts = dateString.split("/");
 	
 	if (dateParts.length == 0) {
+		console.log("BadNoDate");
 		return null;
 	}
 	
@@ -103,19 +107,22 @@ function populateTimeline(data) {
 	var timelineEvents = data.map(function (row) {
 		
 		var timelineEvent = {
-			"media": {
-				"url": row.Image,
-				 "caption": "Ahahahahh",
-				"credit": "Credit"
-			},
 			"text": {
-				"headline": row.Title,
-				"text": "gfhjfghdfg"
+				"headline": row.Title + "",
+				"text": "Not Included"
 			},
 			"unique_id": row.id.toString()
 		}
 		
-		timelineEvent["start_date"] = parseDate(row.StartDate);
+		var value = parseDate(row.StartDate, true);
+
+		if (!value) {
+			$("#errors")
+				.append($("<div/>")
+				.text("The row " + row.id + " has no start date"));		
+		}
+
+		timelineEvent["start_date"] = value;
 		
 		var endDate = parseDate(row.EndDate);
 		if (endDate) {
@@ -132,13 +139,18 @@ function populateTimeline(data) {
 function updateTimeline(timelineEvents) {
 
 	var timeline_json = {
+		/*"title": {
+			"text": {
+			  "headline": "Hello World"
+			}
+		},*/
 		"events": timelineEvents
 	};
 
 	//console.log(JSON.stringify(timeline_json, null, ' '));
 
 	var additionalOptions = {
-		initial_zoom: 4,
+		initial_zoom: 6,
 		dragging: true,
 		start_at_slide: 2
 		//timenav_height: 250
@@ -210,7 +222,7 @@ function displayEventOnMap(eventData)
 		}
 
 		selections.bubbles = [{
-			name: eventData.title,
+			name: eventData.Title,
 			latitude: loc.latitude,
 			longitude: loc.longitude,
 			radius: radius,

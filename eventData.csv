@@ -75,7 +75,7 @@ StartDate,EndDate,Title,Description,Image,Ref,Location,Influences,Empire,Tags
 1822,,The first Expresson machine is made,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,FRA,,,Innovation
 1823,,France invades Spain,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,FRA;ESPSpain,,,War
 1823,,The Monroe Doctrine,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,USA; GBR; South America; Central America,,,Colonisation
-1826,,End of the First Anglo-Burmese War,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,GBR; IND; BUR,Check!!!,British,Empire; Colonisation
+1826,,End of the First Anglo-Burmese War,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,GBR; IND; MMR,Check!!!,British,Empire; Colonisation
 1827,,The match is invented,John Walker,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,GBR,,,Innovation
 1827,,Commercial production of morphine starts,E. Merck & co,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,DEU,,,Drugs
 1829,,"Perth, WA is established",,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,"-31.950527, 115.860457",,British,Colonisation
@@ -112,7 +112,7 @@ StartDate,EndDate,Title,Description,Image,Ref,Location,Influences,Empire,Tags
 1851,,Gold Rush ,"""Australia's population doubles in 10 years"" http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/",,Confirmed by http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,"-37.471308, 144.785153",,British,
 1851,,Gold Rush ,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,"-33.181041, 149.177271",,British,
 1851,,The Great Exhibition,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,"51.419882, -0.078542",,,Innovation
-1852,,The Second Anglo-Burmese War,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,GBR; BUR,CCHECK,,Opium; War
+1852,,The Second Anglo-Burmese War,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,GBR; MMR,CCHECK,,Opium; War
 1853/10,1856/02,Crimean War,,,Confirmed http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,FRA; RUS; GBR; TUR,,,War
 1853,,New Zealand gains independence,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,NZL,,British,Colonisation
 1854,,First commercial oil well,,,,POL,,,Innovation
@@ -120,8 +120,8 @@ StartDate,EndDate,Title,Description,Image,Ref,Location,Influences,Empire,Tags
 1856,,New South Wales gains independent government from the UK,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,"-33.868820, 151.209296",,,Colonisation
 1857,,Indian Rebellion ,concerning British rule in India,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,IND; GBR,,British,Empire
 1858,,The Government of India Act,Becomes crown colony,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,IDN,GBR,British,Empire
-1858,1947,The British Raj;,India ruled by Britain as a Crown Colony,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,GBR; INDI,,British,Empire
-1858,,The Irish Republication Brotherhood is found,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,IRE,,,
+1858,,The British Raj begins,India ruled by Britain as a Crown Colony,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,GBR; INDI,,British,Empire
+1858,,The Irish Republication Brotherhood is found,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,IRL,,,
 1859/11/24,,Charles Darwin releases 'On the origin of species',,,,GBR,,,Literature; Science
 1859,,Queensland created as a state of Australia,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,"-20.917574, 142.702796",,British,
 1859,1869,Construction of the Suez Canal,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,"29.931389, 32.562778",IND; CHN; GBR,,Innovation

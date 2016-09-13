@@ -10,6 +10,7 @@ var codeMap = null;
 var allEvents = null;
 var timelineStart = 1789;
 var timelineEnd = 1914;
+var _timeline = null;
 
 var selections = {};
 
@@ -139,11 +140,7 @@ function populateTimeline(data) {
 function updateTimeline(timelineEvents) {
 
 	var timeline_json = {
-		/*"title": {
-			"text": {
-			  "headline": "Hello World"
-			}
-		},*/
+
 		"events": timelineEvents
 	};
 
@@ -166,6 +163,7 @@ function updateTimeline(timelineEvents) {
 		displayEventOnMap(eventData);
 	});
 
+	_timeline = timeline;
 }
 
 function ensureLatLong(location) {
@@ -276,4 +274,27 @@ var map = new Datamap({
 
 d3.select(window).on('resize', function() {
 	map.resize();
+});
+
+var timerId = null;
+
+function playSlideShow() {
+
+	_timeline.goToNext();
+
+	timerId = setTimeout(playSlideShow, 1000);
+}
+
+$(function() {
+
+	$("#play-button").click(function () {
+
+		if (timerId) {
+			clearTimeout(timerId);
+		} else {
+			//_timeline.goToStart();
+			playSlideShow();
+		}
+	});
+
 });

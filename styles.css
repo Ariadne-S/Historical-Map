@@ -31,6 +31,14 @@ h2 {
 	font-size: 1.1em;
 }
 
+.pull-right {
+	float: right;
+}
+
+.menu-option {
+	float: left;
+	padding: 12pt;
+}
 
 #container {
 	/*

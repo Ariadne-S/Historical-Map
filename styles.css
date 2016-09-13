@@ -59,13 +59,15 @@ h2 {
 }
 
 #info {
-	position: relative;
-	display: none;
-	margin: auto;
-	z-index: -1;
+	position: fixed;
 	background-color: #D3D3D3;
-	width: 900px;
-	height:600px;
+	opacity: .5;
+	
+	top: 50pt;
+	bottom: 165px;
+	width: 300pt;
+	right: 0;
+	padding: 10pt;
 }
 
 #timeline-embed {

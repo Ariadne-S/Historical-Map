@@ -188,6 +188,11 @@ function ensureLatLong(location) {
 function displayEventOnMap(eventData)
 {
 	if (!eventData) return;
+
+	$("#info")
+		.empty()
+		.append($("<h4></h4>").text(eventData.Title))
+		.append($("<p></p>").text(eventData.Description));
 	
 	var location = eventData.Location;
 	

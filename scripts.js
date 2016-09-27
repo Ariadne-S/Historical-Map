@@ -13,6 +13,7 @@ var timelineEnd = 1914;
 var _timeline = null;
 var _map = null;
 var _svg = null;
+var _empireData =null;
 
 var selections = {};
 
@@ -48,9 +49,20 @@ $.getJSON("countrycode-latlong-array.json", function(data) {
 			TryLoad();
 		});
 
+Papa.parse("Empires.csv", {
+	download: true,
+	header: true,
+	skipEmptyLines: true,
+
+	complete: function(empireData) {
+		_empireData = empireData.data;
+		TryLoad();
+	}
+});
+
 function TryLoad()
 {
-	if (alpha2toLatLong && codeMap && rawEvents) {
+	if (alpha2toLatLong && codeMap && rawEvents && _empireData) {
 		populateTimeline(rawEvents);
 	}
 }
@@ -99,6 +111,9 @@ function parseDate(dateString, needed) {
 	return dateDto;
 }
 
+
+function isOdd(num) { return (num % 2) == 1;}
+
 function populateTimeline(data) {
 	
 	for (var i = 0; i < data.length; i++) {
@@ -107,6 +122,7 @@ function populateTimeline(data) {
 	
 	allEvents = data;
 	
+	var britishIndex = 0;
 	var timelineEvents = data.map(function (row) {
 		
 		var timelineEvent = {
@@ -124,8 +140,14 @@ function populateTimeline(data) {
 			group = empires[0]; 
 		}
 		
-		if (!(group === "British" 
-			|| group === "Spanish" 
+		if (group === "British") {
+
+			group = group + (isOdd(britishIndex) ? ". " : "  ");
+
+			britishIndex += 1;
+
+
+		} else if (!(group === "British" 
 			|| group === "French" 
 			|| group ===  "American")) {
 			group = "Other";
@@ -182,6 +204,14 @@ function updateTimeline(timelineEvents) {
 	});
 
 	_timeline = timeline;
+}
+
+function setEmpireColours(year) {
+	var empirePeriod = _empireData["start"];
+
+	var coloursUpdate = {};
+
+	debugger;
 }
 
 function ensureLatLong(location) {

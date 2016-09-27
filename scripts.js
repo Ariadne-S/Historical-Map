@@ -116,7 +116,23 @@ function populateTimeline(data) {
 			},
 			"unique_id": row.id.toString()
 		}
+
+		var group = null;
+
+		if (row.Empire != null && row.Empire != "") {
+			var empires = row.Empire.split (";");
+			group = empires[0]; 
+		}
 		
+		if (!(group === "British" 
+			|| group === "Spanish" 
+			|| group === "French" 
+			|| group ===  "American")) {
+			group = "Other";
+		}
+
+		timelineEvent.group = group;
+
 		var value = parseDate(row.StartDate, true);
 
 		if (!value) {
@@ -189,7 +205,7 @@ function displayEventOnMap(eventData)
 {
 	if (!eventData) return;
 
-	$("#info")
+	$("#info .content")
 		.empty()
 		.append($("<h4></h4>").text(eventData.Title))
 		.append($("<p></p>").text(eventData.Description));
@@ -290,6 +306,10 @@ $(function() {
 		}
 	});
 
+	$("#info").resizable({
+		handles: "w",
+		minWidth: 80
+	});
 		
 	// Draw stuff on the Screen
 

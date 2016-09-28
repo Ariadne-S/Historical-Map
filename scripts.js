@@ -123,7 +123,10 @@ function populateTimeline(data) {
 	allEvents = data;
 	
 	var britishIndex = 0;
-	var timelineEvents = data.map(function (row) {
+	var timelineEvents = data.filter(function (row){
+		return row.StartDate.indexOf("//") == -1;
+
+	}).map(function (row) {
 		
 		var timelineEvent = {
 			"text": {
@@ -156,6 +159,7 @@ function populateTimeline(data) {
 		timelineEvent.group = group;
 
 		var value = parseDate(row.StartDate, true);
+		row.startDate = value;
 
 		if (!value) {
 			$("#errors")
@@ -200,18 +204,68 @@ function updateTimeline(timelineEvents) {
 		var id = parseInt(data.unique_id);
 		var eventData = allEvents[id];
 		
+		resetEventCountryColour();
+		setEmpireColours(parseInt(eventData.startDate.year));
 		displayEventOnMap(eventData);
 	});
 
 	_timeline = timeline;
+	setEmpireColours();
 }
 
+var _currentEmpireColours = null;
+
 function setEmpireColours(year) {
-	var empirePeriod = _empireData["start"];
 
-	var coloursUpdate = {};
+	var potentialPeriod = null;
+	var length = _empireData.length;
+	for (var i = 0; i < length; i++) {
+		potentialPeriod = _empireData[i];
+		if (year == undefined || year <= potentialPeriod.Year) {
+			break;
+		}
+	}
+	var empirePeriod = potentialPeriod;
+	
 
-	debugger;
+	// Reset colours back to silver
+	if (_currentEmpireColours != null) {
+
+		for (var countryColour in _currentEmpireColours) {
+			if (_currentEmpireColours.hasOwnProperty(countryColour)) {
+				_currentEmpireColours[countryColour] = "silver";
+			}
+		}
+		_map.updateChoropleth(_currentEmpireColours);
+	}
+
+	// Update colors to what the empires for the period are
+	var colourUpdatesForThisPeriod = {};
+
+	for (var empireAndColour in empirePeriod) {
+		if (empirePeriod.hasOwnProperty(empireAndColour)) {
+
+			if (empireAndColour == "Year" || empireAndColour == "")
+			{
+				continue;
+			}
+
+			var colour = empireAndColour.split(" ")[1];
+
+			var codesListString = empirePeriod[empireAndColour];
+			var codes = codesListString.split(";").map(function(x) {
+				return x.trim();
+			});
+
+			codes.forEach(function(code) {
+				
+				colourUpdatesForThisPeriod[code] = colour
+			});
+		}
+	}
+
+	_map.updateChoropleth(colourUpdatesForThisPeriod);
+	_currentEmpireColours = colourUpdatesForThisPeriod;
 }
 
 function ensureLatLong(location) {
@@ -231,15 +285,36 @@ function ensureLatLong(location) {
 	return loc;
 }
 
+function resetEventCountryColour()
+{
+	var prevColors = selections.choropleth;
+	for (var name in prevColors) {
+		if (prevColors.hasOwnProperty(name)) {
+			prevColors[name] = 'silver';
+		}
+	}
+	_map.updateChoropleth(prevColors);
+}
+
 function displayEventOnMap(eventData)
 {
 	if (!eventData) return;
 
+	$("#infotitles")
+		.empty()
+		.append($("<h4></h4>").text(eventData.Title));
+
 	$("#info .content")
 		.empty()
-		.append($("<h4></h4>").text(eventData.Title))
-		.append($("<p></p>").text(eventData.Description));
+		.append($("<h5></h5>").text(eventData.Tags))
+		.append($("<p></p>").text(eventData.Description))
+		.append($("<p></p>").text(eventData.ForMoreSee))
+		.append($("<h4></h4>").text(eventData.RelatedEvents));
 	
+	$("#footnotes")
+		.empty()
+		.append($("<p></p>").text(eventData.Footnotes));
+
 	var location = eventData.Location;
 	
 	var parts = location.split(";");
@@ -247,14 +322,6 @@ function displayEventOnMap(eventData)
 	for (var i = 0; i < parts.length; i++) {
 		parts[i] = parts[i].trim();
 	}
-
-	var prevColors = selections.choropleth;
-	for (var name in prevColors) {
-		if (prevColors.hasOwnProperty(name)) {
-			prevColors[name] = '#ABDDA4';
-		}
-	}
-	_map.updateChoropleth(prevColors);
 
 	selections.bubbles = [];
 	selections.arcs = [];
@@ -277,7 +344,7 @@ function displayEventOnMap(eventData)
 			latitude: loc.latitude,
 			longitude: loc.longitude,
 			radius: radius,
-			fillKey: 'daniel'
+			fillKey: 'blue'
 		}];
 
 	} else if (parts.length == 2) {
@@ -390,8 +457,7 @@ $(function() {
 		width: mapWidth,
 		height: mapHeight,
 		fills: {
-			defaultFill: "#ABDDA4",
-			daniel: "#5392c1"
+			defaultFill: "#C0C0C0"
 		},
 
 		geographyConfig: {

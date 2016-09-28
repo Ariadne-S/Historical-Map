@@ -395,12 +395,15 @@ $(function() {
 
 	$("#play-button").click(function () {
 
-		if (timerId) {
-			clearTimeout(timerId);
-		} else {
-			//_timeline.goToStart();
-			playSlideShow();
-		}
+			$("#play-button i").toggleClass ("hidden");
+
+
+			if (timerId) {
+				clearTimeout(timerId);
+			} else {
+				//_timeline.goToStart();
+				playSlideShow();
+			}
 	});
 
 	$("#info").resizable({

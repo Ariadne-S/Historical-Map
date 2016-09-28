@@ -7,14 +7,21 @@
 		<link rel="stylesheet" href="./jqueryui/jquery-ui.min.css">
 		<link rel="stylesheet" href="./jqueryui/jquery-ui.structure.min.css">
 		<link rel="stylesheet" href="./jqueryui/jquery-ui.theme.min.css">
+		<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
 	</head>
 	<body>
 		<div id="page">
 			<div class="headings">
 
 				<div class="pull-right">
-					<div id="play-button" class="menu-option">Play</div>
-					<div class="menu-option">Menu</div>
+
+					<div id = "tags" class="menu-option"><i class="fa fa-tag"></i></div>
+
+					<div id="play-button" class="menu-option">
+						<i class="fa fa-play"></i>
+						<i class="fa fa-pause hidden" ></i>
+						</div>
+					<div id = ref class="menu-option"><i class="fa fa-book"></i></div>
 				</div>
 
 				<h1>History's Interactive Map</h1>
@@ -25,7 +32,8 @@
 			
 			<div id="info">
 				<div id ="infotitles"></div>
-				<div class=content></div>
+				<div class=content>
+				</div>
 				<div id ="footnotes"></div>
 			</div>
 		</div>

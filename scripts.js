@@ -250,7 +250,9 @@ function setEmpireColours(year) {
 				continue;
 			}
 
-			var colour = empireAndColour.split(" ")[1];
+			var colour = empireAndColour.split(" ").filter(function (x) {
+				return x != "";
+			})[1];
 
 			var codesListString = empirePeriod[empireAndColour];
 			var codes = codesListString.split(";").map(function(x) {

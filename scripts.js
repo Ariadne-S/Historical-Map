@@ -17,6 +17,18 @@ var _empireData =null;
 
 var selections = {};
 
+if (!String.prototype.format) {
+  String.prototype.format = function() {
+    var args = arguments;
+    return this.replace(/{(\d+)}/g, function(match, number) { 
+      return typeof args[number] != 'undefined'
+        ? args[number]
+        : match
+      ;
+    });
+  };
+}
+
 var results = Papa.parse("eventData.csv", {
 	download: true,
 	header: true,
@@ -63,7 +75,7 @@ Papa.parse("Empires.csv", {
 function TryLoad()
 {
 	if (alpha2toLatLong && codeMap && rawEvents && _empireData) {
-		var result = validateData();
+		var result = validateData(rawEvents);
 		if (result.isValid) {
 			populateTimeline(rawEvents);
 		} else {
@@ -72,21 +84,148 @@ function TryLoad()
 	}
 }
 
-function validateData()
+function validateData(rawEvents)
 {
-	console.log(Datamap);
+	var result = {
+		messages: [],
+		isValid: false
+	};
+
+	function addError(error)
+	{
+		if (error) {
+			result.messages.push(error);
+		}
+	}
+
+	if (rawEvents.length == 0) {
+		result.messages.push('You need at least one event!');
+		return result;
+	}
+
+	// Needed Columns 
+
+	var csvColumns = [];
+	var firstRecord = rawEvents[0]
+	for (var propName in firstRecord) {
+		if (firstRecord.hasOwnProperty(propName)) {
+			csvColumns.push(propName);
+		}
+	}
+
+	var neededColumns = ['StartDate', 'EndDate', 'Title', 'RelatedEvents', 'Description', 'Footnotes', 'Image', 'ForMoreSee', 'Ref', 'Location', 'Influences', 'Empire', 'Tags'];
+	
+	for (var i=0; i<neededColumns.length; i++){
+		var foundIt = false;
+		var neededColumnName = neededColumns[i];
+		for(var j=0; j<csvColumns.length; j++){
+			if (neededColumnName == csvColumns[j]){
+				foundIt = true;
+				break;
+			}
+		}
+		if (!foundIt){
+			result.messages.push('You are missing the column {0}'.format(neededColumnName));
+		}
+	}
+
+	if (result.messages.length > 0) {
+		return result;
+	}
+
+	// Dates
+
+	for (var i = 1; i < rawEvents.length; i++) {
+		var record = rawEvents[i];
+		addError(validateDate(record.StartDate, "Line {0}: Start Date: ".format(i)));
+	}
+
+	// Codes
+
+
+
+	console.log(rawEvents);
+
+	if (result.messages.length > 0) {
+		return result;
+	}
+
 	return {
 		isValid: true
 	}
 }
 
-
-function displayErrors()
+function validateDate(date, context)
 {
-	$("body")
-		.empty()
-		.append($("<div/>").text("Dragons"));
+	if (date == null || date == "")
+	{
+		return context + "Date is missing";
+	}
 
+	var dateParts = date.split("/");
+	
+	function checkIt(index, length, message)
+	{
+		function matchLen(len, actualLen)
+		{
+			if (len == actualLen) {
+				return true;
+			} else if (len.length && (len[0] == actualLen || len[1] == actualLen)) {
+				return true;
+			}
+
+			return false;
+		}
+
+		var part = dateParts[index];
+		var isNum = /^\d+$/.test(part);
+		if (matchLen(length, part.length) && isNum){
+			return null;
+		}
+		return context + message;
+	}
+
+	var dateValMessage = "Date must be in the format YYYY/MM/DD but was {0}".format(date);
+
+	if (dateParts.length > 3)
+	{
+		return context + "Date has too many parts, it was {0}".format(date);
+	}
+
+	if (dateParts.length == 3) {
+		var result = checkIt(2, [1,2], dateValMessage);
+		if (result) {
+
+			var result1 = checkIt(2, 4, dateValMessage);
+			var result2 = checkIt(0, [1,2], dateValMessage);
+
+			if (result1 == null && result2 == null) {
+				return null;
+			}
+			return result;
+		} 
+
+	}if (dateParts.length >= 2) {
+		var result = checkIt(1, [1,2], dateValMessage);
+		if (result) return result;
+		
+	} else if (dateParts.length >= 1) {
+		var result = checkIt(0, 4, dateValMessage);
+		if (result) return result;
+
+	}
+
+	return null;
+}
+
+function displayErrors(result)
+{
+	var body = $("body")
+		.empty();
+
+	for (var i = 0; i < result.messages.length; i++){
+		body.append($("<div class='error'/>").text(result.messages[i]));
+	}
 }
 		
 function GetLocForCode(alpha3)
@@ -101,20 +240,7 @@ function GetLocForCode(alpha3)
 
 function parseDate(dateString, needed) {
 	
-	if (dateString == null || dateString == "") {
-		if (needed) {
-			console.log("NoDate");
-		}
-		return null
-	}
-	
 	var dateParts = dateString.split("/");
-	
-	if (dateParts.length == 0) {
-		console.log("BadNoDate");
-		return null;
-	}
-	
 	var dateDto = {};
 	
 	if (dateParts.length >= 3 && dateParts[2].length == 4) {
@@ -450,6 +576,10 @@ $(function() {
 	var gElem = null;
 
 	function updatePan(zoom, panX, panY, scale) {
+
+		if (!scale) {
+			scale = 1;
+		}
 
 		var portWidth = container.width()
 		var portHeight = container.height();

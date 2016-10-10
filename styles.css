@@ -93,7 +93,7 @@ h2 {
 	height: 75%;
 }
 
-#footnotes {
+#footnotes .divider {
 	border-top: 0.8px solid dimgrey;
 }
 

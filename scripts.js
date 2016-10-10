@@ -63,10 +63,31 @@ Papa.parse("Empires.csv", {
 function TryLoad()
 {
 	if (alpha2toLatLong && codeMap && rawEvents && _empireData) {
-		populateTimeline(rawEvents);
+		var result = validateData();
+		if (result.isValid) {
+			populateTimeline(rawEvents);
+		} else {
+			displayErrors(result);			
+		}
 	}
 }
-		
+
+function validateData()
+{
+	console.log(Datamap);
+	return {
+		isValid: true
+	}
+}
+
+
+function displayErrors()
+{
+	$("body")
+		.empty()
+		.append($("<div/>").text("Dragons"));
+
+}
 		
 function GetLocForCode(alpha3)
 {
@@ -96,6 +117,10 @@ function parseDate(dateString, needed) {
 	
 	var dateDto = {};
 	
+	if (dateParts.length >= 3 && dateParts[2].length == 4) {
+		dateParts = dateParts.reverse();
+	}
+
 	if (dateParts.length >= 1) {
 		dateDto.year = dateParts[0];
 	}
@@ -315,7 +340,7 @@ function displayEventOnMap(eventData)
 	
 	$("#footnotes")
 		.empty()
-		.append($("<p></p>").text(eventData.Footnotes));
+		.append($("<p class='divider'</p>").text(eventData.Footnotes));
 
 	var location = eventData.Location;
 	
@@ -424,9 +449,7 @@ $(function() {
 
 	var gElem = null;
 
-	function updatePan(panX, panY, scale, remember) {
-
-		scale = scale * .83;
+	function updatePan(zoom, panX, panY, scale) {
 
 		var portWidth = container.width()
 		var portHeight = container.height();
@@ -438,27 +461,35 @@ $(function() {
 		var translationOffsetY = heightDiff / 2;
 
 		// TODO: Bounds Checking!
-
 		//var boundX = Math.max(0, Math.min(panX, mapWidth - portWidth));
 		//console.log(boundX + ", " + panX + ", " + (mapWidth - portWidth));
 
-		if (remember) {
-			remember(panX, panY);
-		}
-
-		var tx = panX - translationOffsetX;
-		var ty = panY - translationOffsetY;
-
 		_svg.selectAll("g")
 			.attr("transform", [
-				"translate(" + [tx, ty] + ")",
+				"translate(" + [panX, panY] + ")",
 					"scale(" + scale + ")"
 				].join(" "));
 	}
 
 	var map = new Datamap({
 		element: document.getElementById('container'),
-		//responsive: true,x
+		//projection: 'equirectangular',
+		setProjection: function(element, options) {
+
+            var projection, path;
+            projection = d3.geo.equirectangular()
+				.scale(250)
+				.center([0, 10])
+				.rotate([-4.4, 0])
+                .translate([element.offsetWidth / 2, element.offsetHeight / 2]);
+
+            path = d3.geo.path()
+                .projection( projection );
+
+            return {path: path, projection: projection};
+        },
+
+		//responsive: true,
 		width: mapWidth,
 		height: mapHeight,
 		fills: {
@@ -475,22 +506,24 @@ $(function() {
 
 			updatePan(0, 0, 1);
 
+			var margin = 1000;
+
 			var zoom = d3.behavior.zoom()
 			// only scale up, e.g. between 1x and 2x
-			.scaleExtent([1, 2])
+			.scaleExtent([1, 6])
+			//.translateExtent([[-margin, -margin], [mapWidth + margin, mapHeight + margin]])
 			.on("zoom", function() {
-
+				
 				var e = d3.event;
-				var panX = e.translate[0];
-				var panY = e.translate[1];
+				var s = e.scale;
+				var x = e.translate[0];
+				var y = e.translate[1];
 
-				updatePan(panX, panY, e.scale, function(x, y) {
-					zoom.translate([x, y]);
-				});
+				updatePan(zoom, x, y, s);
 				
 			});
 
-		datamap.svg.call(zoom);
+			datamap.svg.call(zoom);
 		}
 	});
 

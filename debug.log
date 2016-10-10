@@ -1,0 +1,16 @@
+[1006/204627:ERROR:process_reader_win.cc(173)] ResumeThread: The parameter is incorrect. (0x57)
+[1006/204627:ERROR:process_reader_win.cc(142)] SuspendThread: Access is denied. (0x5)
+[1006/204627:ERROR:process_reader_win.cc(142)] SuspendThread: Access is denied. (0x5)
+[1006/204627:ERROR:process_reader_win.cc(142)] SuspendThread: Access is denied. (0x5)
+[1006/204627:ERROR:process_reader_win.cc(142)] SuspendThread: Access is denied. (0x5)
+[1006/204627:ERROR:process_reader_win.cc(142)] SuspendThread: Access is denied. (0x5)
+[1006/204627:ERROR:process_reader_win.cc(142)] SuspendThread: Access is denied. (0x5)
+[1006/204627:ERROR:process_reader_win.cc(142)] SuspendThread: Access is denied. (0x5)
+[1006/204627:ERROR:process_reader_win.cc(142)] SuspendThread: Access is denied. (0x5)
+[1006/204627:ERROR:process_reader_win.cc(142)] SuspendThread: Access is denied. (0x5)
+[1006/204627:ERROR:process_reader_win.cc(142)] SuspendThread: Access is denied. (0x5)
+[1006/204627:ERROR:process_reader_win.cc(142)] SuspendThread: Access is denied. (0x5)
+[1006/204627:ERROR:process_reader_win.cc(142)] SuspendThread: Access is denied. (0x5)
+[1006/204627:ERROR:process_reader_win.cc(142)] SuspendThread: Access is denied. (0x5)
+[1006/204627:ERROR:exception_snapshot_win.cc(87)] thread ID 3920 not found in process
+[1006/204627:WARNING:crash_report_exception_handler.cc(56)] ProcessSnapshotWin::Initialize failed

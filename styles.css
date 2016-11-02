@@ -48,6 +48,10 @@ h2 {
 .menu-option:hover {
     background-color: #555;
 	color: #EEE;
+}
+.menu-option:active {
+    background-color: #555;
+	color: #EEE;
  
 }
 
@@ -59,10 +63,8 @@ h2 {
 	right: 0;
 	bottom: 100pt;
 	-height: 200px;
-
 	margin: 0 !important;
 	padding: 0 !important;
-
 	overflow: hidden;
 }
 
@@ -80,7 +82,7 @@ h2 {
 	-opacity: .5;
 	top: 50pt;
 	bottom: 185px;
-	width: 300pt;
+	width: 160pt;
 	right: 0;
 	padding: 10pt;
 	left: unset !important;
@@ -122,4 +124,16 @@ h2 {
 #timeline-embed
 {
 	background: transparent !important;
+}
+
+
+#ref {
+	position: fixed;
+	top: 50pt;
+	bottom: 5px;
+	right: 5pt;
+	padding: 10pt;
+	left: 5pt;
+	overflow-x: hidden;
+	overflow-y: auto;
 }

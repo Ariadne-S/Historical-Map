@@ -137,7 +137,9 @@ function validateData(rawEvents)
 
 	for (var i = 1; i < rawEvents.length; i++) {
 		var record = rawEvents[i];
-		addError(validateDate(record.StartDate, "Line {0}: Start Date: ".format(i)));
+		var lineNumber = i + 2;
+		addError(validateDate(record.StartDate, "Line {0}: Start Date: ".format(lineNumber)));
+		addError(validateDate(record.EndDate, "Line {0}: End Date: ".format(lineNumber), true));
 	}
 
 	// Codes
@@ -155,34 +157,24 @@ function validateData(rawEvents)
 	}
 }
 
-function validateDate(date, context)
+function validateDate(date, context, isOptional)
 {
 	if (date == null || date == "")
 	{
-		return context + "Date is missing";
+		if (isOptional != true) {
+			return context + "Date is missing"; 
+		} else {
+			return null;
+		}
 	}
 
 	var dateParts = date.split("/");
 	
-	function checkIt(index, length, message)
+	function checkIt(index, length)
 	{
-		function matchLen(len, actualLen)
-		{
-			if (len == actualLen) {
-				return true;
-			} else if (len.length && (len[0] == actualLen || len[1] == actualLen)) {
-				return true;
-			}
-
-			return false;
-		}
-
 		var part = dateParts[index];
 		var isNum = /^\d+$/.test(part);
-		if (matchLen(length, part.length) && isNum){
-			return null;
-		}
-		return context + message;
+		return (length === part.length && isNum);
 	}
 
 	var dateValMessage = "Date must be in the format YYYY/MM/DD but was {0}".format(date);
@@ -192,30 +184,45 @@ function validateDate(date, context)
 		return context + "Date has too many parts, it was {0}".format(date);
 	}
 
-	if (dateParts.length == 3) {
-		var result = checkIt(2, [1,2], dateValMessage);
-		if (result) {
-
-			var result1 = checkIt(2, 4, dateValMessage);
-			var result2 = checkIt(0, [1,2], dateValMessage);
-
-			if (result1 == null && result2 == null) {
-				return null;
-			}
-			return result;
-		} 
-
-	}if (dateParts.length >= 2) {
-		var result = checkIt(1, [1,2], dateValMessage);
-		if (result) return result;
-		
-	} else if (dateParts.length >= 1) {
-		var result = checkIt(0, 4, dateValMessage);
-		if (result) return result;
-
+	function formatOnlyYear(parts)
+	{
+		if (dateParts.length != 1) return false;
+		return checkIt(0, 4);
 	}
 
-	return null;
+	function formatYearAndMonth(parts)
+	{
+		if (dateParts.length != 2) return false;
+		return checkIt(0, 4)
+			&& (checkIt(1, 1) || checkIt(1, 2));
+	}
+
+	function formatYearMonthDay(parts)
+	{
+		if (dateParts.length != 3) return false;
+		return checkIt(0, 4)
+			&& (checkIt(1, 1) || checkIt(1, 2))
+			&& (checkIt(2, 1) || checkIt(2, 2));
+	}
+
+	function formatDayMonthYear(parts)
+	{
+		if (dateParts.length != 3) return false;
+		return checkIt(2, 4)
+			&& (checkIt(1, 1) || checkIt(1, 2))
+			&& (checkIt(0, 1) || checkIt(0, 2));
+	}
+
+	if (
+		formatOnlyYear(dateParts)
+		|| formatYearAndMonth(dateParts)
+		|| formatYearMonthDay(dateParts)
+		|| formatDayMonthYear(dateParts))
+	{
+		return null;
+	}
+
+	return context + dateValMessage;
 }
 
 function displayErrors(result)
@@ -240,7 +247,13 @@ function GetLocForCode(alpha3)
 
 function parseDate(dateString, needed) {
 	
-	var dateParts = dateString.split("/");
+	if (dateString == null 
+	|| dateString == "" 
+	|| dateString.trim() == "") {
+		return null;
+	}
+
+	var dateParts = dateString.trim().split("/");
 	var dateDto = {};
 	
 	if (dateParts.length >= 3 && dateParts[2].length == 4) {
@@ -557,6 +570,12 @@ $(function() {
 				//_timeline.goToStart();
 				playSlideShow();
 			}
+	});
+
+
+	$("#tag-button").click(function () {
+
+			$("#tag-button i").toggleClass ("hidden");
 	});
 
 	$("#info").resizable({

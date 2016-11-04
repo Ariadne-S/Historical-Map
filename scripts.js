@@ -300,7 +300,7 @@ function populateTimeline(data) {
 			"unique_id": row.id.toString()
 		}
 
-		var group = null;
+		/*var group = null;
 
 		if (row.Empire != null && row.Empire != "") {
 			var empires = row.Empire.split (";");
@@ -320,7 +320,7 @@ function populateTimeline(data) {
 			group = "Other";
 		}
 
-		timelineEvent.group = group;
+		timelineEvent.group = group;*/
 
 		var value = parseDate(row.StartDate, true);
 		row.startDate = value;
@@ -468,7 +468,9 @@ function displayEventOnMap(eventData)
 
 	$("#infotitles")
 		.empty()
-		.append($("<h4></h4>").text(eventData.Title));
+		.append($("<h4></h4>").text(eventData.Title))
+		.append($("<h5></h5>").text(eventData.StartDate))
+		.append($("<h5></h5>").text(eventData.EndDate));
 
 	$("#info .content")
 		.empty()

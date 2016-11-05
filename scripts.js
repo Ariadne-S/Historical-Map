@@ -513,6 +513,9 @@ function displayEventOnMap(eventData)
 	var relatedEvents = eventData.RelatedEvents;
 	var relatedLinks = relatedEvents.split(";")
 		.map(function(x) { return x.trim() })
+		.filter(function(x) {
+			return x != "" && x != null;
+		})
 		.map(function(x) {
 			return $("<li/>")
 				.append($('<a class="link"/>')
@@ -572,7 +575,7 @@ function displayEventOnMap(eventData)
 			latitude: loc.latitude,
 			longitude: loc.longitude,
 			radius: radius,
-			fillKey: 'rgba(0, 62, 255, 0.51)'
+			fillKey: 'bubble'
 		}];
 
 	} else if (parts.length == 2) {
@@ -596,7 +599,8 @@ function displayEventOnMap(eventData)
 		for (var i = 0; i < parts.length; i++) {
 			var countryCode = parts[i];
 			
-			applyColors[countryCode] = '#5392c1';
+			//Remember
+			applyColors[countryCode] = '#4C668C';
 		}
 
 		selections.choropleth = applyColors;
@@ -700,14 +704,41 @@ $(function() {
 		width: mapWidth,
 		height: mapHeight,
 		fills: {
-			defaultFill: "#C0C0C0"
+			defaultFill: "#C0C0C0",
+			bubble: "#2C4870"
+			//colour
 		},
+		//colour
 		geographyConfig: {
 			hideAntarctica: false,
 			highlightOnHover: true,
-       		highlightFillColor: '#4682B4',
+       		highlightFillColor: '#A36956',
         	highlightBorderColor: '#FFF'	
 		},
+
+		bubblesConfig: {
+       		borderWidth: 2,
+        	borderOpacity: 1,
+        	borderColor: '#142E54',
+        	popupOnHover: true, // True to show the popup while hovering
+        	radius: null,
+        	fillOpacity: 0.75,
+       		animate: true,
+        	highlightOnHover: true,
+        	highlightFillColor: '#472E74',
+        	highlightBorderColor: '#2D1657',
+        	highlightBorderWidth: 2,
+        	highlightBorderOpacity: 1,
+        	highlightFillOpacity: 0.85,
+		},
+
+		arcConfig: {
+			strokeColor: '#142E54',
+			strokeWidth: 2,
+			arcSharpness: 1.2,
+			animationSpeed: 600, // Milliseconds
+			popupOnHover: false, // True to show the popup while hovering
+  },
 
 		done: function(datamap) {
 

@@ -544,15 +544,25 @@ function displayEventOnMap(eventData)
 		.empty()
 		.append($("<p class='divider'</p>").text(eventData.Footnotes));
 
-	
 
-	var location = eventData.Location;
-	
-	var parts = location.split(";");
-	
-	for (var i = 0; i < parts.length; i++) {
-		parts[i] = parts[i].trim();
+	function splitUpLocations(locations) {
+		var parts = locations.split(";");
+		
+		for (var i = 0; i < parts.length; i++) {
+			parts[i] = parts[i].trim();
+		}
+
+		return parts;
 	}
+	
+	function applyCountryColours(choropleth, parts, colour) {
+		for (var i = 0; i < parts.length; i++) {
+			var countryCode = parts[i];			
+			choropleth[countryCode] = colour;
+		}
+	}
+
+	var parts = splitUpLocations(eventData.Location);
 
 	selections.bubbles = [];
 	selections.arcs = [];
@@ -595,17 +605,12 @@ function displayEventOnMap(eventData)
 	} else if (parts.length > 2) {
 		type = "fill";
 		
-		var applyColors = {};
-		for (var i = 0; i < parts.length; i++) {
-			var countryCode = parts[i];
-			
-			//Remember
-			applyColors[countryCode] = '#4C668C';
-		}
-
-		selections.choropleth = applyColors;
+		applyCountryColours(selections.choropleth, parts, '#4C668C');
 	}
-	
+
+	var influences = splitUpLocations(eventData.Influences);
+	applyCountryColours(selections.choropleth, influences, '#758AA8');
+
 	_map.bubbles(selections.bubbles);
 	_map.arc(selections.arcs);
 	_map.updateChoropleth(selections.choropleth);
@@ -712,7 +717,7 @@ $(function() {
 		geographyConfig: {
 			hideAntarctica: false,
 			highlightOnHover: true,
-       		highlightFillColor: '#A36956',
+       		highlightFillColor: '#c3a79e',
         	highlightBorderColor: '#FFF'	
 		},
 

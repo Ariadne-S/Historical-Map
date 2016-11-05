@@ -8,6 +8,7 @@ var alpha2toLatLong = null;
 var codeMap = null;
 
 var allEvents = null;
+var idLookup = null;
 var timelineStart = 1789;
 var timelineEnd = 1914;
 var _timeline = null;
@@ -148,9 +149,6 @@ function validateData(rawEvents)
 	// Codes
 
 
-
-	console.log(rawEvents);
-
 	if (result.messages.length > 0) {
 		return result;
 	}
@@ -282,19 +280,19 @@ function parseDate(dateString, needed) {
 function isOdd(num) { return (num % 2) == 1;}
 
 function populateTimeline(data) {
-	
-	for (var i = 0; i < data.length; i++) {
-		data[i].id = i;
-	}
-	
-	allEvents = data;
-	
-	var britishIndex = 0;
-	var timelineEvents = data.filter(function (row){
+	idLookup = {};
+	allEvents = data.filter(function (row){
 		return row.StartDate.indexOf("//") == -1;
-
-	}).map(function (row) {
+	});
+	
+	var rowId = 0;
+	var britishIndex = 0;
+	var timelineEvents = allEvents.map(function (row) {
 		
+		//mark
+		row.id = rowId++;
+		idLookup[row.Title.toLowerCase()] = row.id;
+
 		var timelineEvent = {
 			"text": {
 				"headline": row.Title + "",
@@ -344,8 +342,7 @@ function populateTimeline(data) {
 	
 		return timelineEvent;
 	});
-	
-	//console.log(timelineEvents);
+
 	updateTimeline(timelineEvents);
 }
 
@@ -356,20 +353,25 @@ function updateTimeline(timelineEvents) {
 		"events": timelineEvents
 	};
 
-	//console.log(JSON.stringify(timeline_json, null, ' '));
-
 	var additionalOptions = {
 		initial_zoom: 6,
 		dragging: true,
 		start_at_slide: 2
-		//timenav_height: 250
 	};
 
 	var timeline = new TL.Timeline('timeline-embed', timeline_json, additionalOptions);
 
 	timeline.on("change", function(data) {
+		//mark
+		console.log(data.unique_id);
 
 		var id = parseInt(data.unique_id);
+
+		if (!id && id !== 0) {
+			console.log("There is no event with this id: " + data.unique_id); 
+			return;
+		}
+
 		var eventData = allEvents[id];
 		
 		resetEventCountryColour();
@@ -508,12 +510,32 @@ function displayEventOnMap(eventData)
 			.append($("<b></b>").text(formatDate(eventData.EndDate)));
 	}
 		
+	var relatedEvents = eventData.RelatedEvents;
+	var relatedLinks = relatedEvents.split(";")
+		.map(function(x) { return x.trim() })
+		.map(function(x) {
+			return $("<li/>")
+				.append($('<a class="link"/>')
+					.text(x)
+					.on('click', function() {
+						var id = idLookup[x.toLowerCase()];
+						console.log("Looked up id: " + id);
+						_timeline.goToId(id.toString());
+					}));
+
+			//mark
+		});
+
+	var eventElement = $("<ul></ul>");
+	for (var i = 0; i < relatedLinks.length; i++) {
+		eventElement.append(relatedLinks[i]);
+	}
 
  	$("#info .content")
 		.empty()
 		.append($("<h5></h5>").text(eventData.Tags))
 		.append($("<p></p>").text(eventData.Description))
-		.append($("<h4></h4>").text(eventData.RelatedEvents));
+		.append(eventElement);
 	
 	$("#footnotes")
 		.empty()

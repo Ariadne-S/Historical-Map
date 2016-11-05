@@ -534,16 +534,42 @@ function displayEventOnMap(eventData)
 		eventElement.append(relatedLinks[i]);
 	}
 
- 	$("#info .content")
+	var eventTags = eventData.Tags;
+	var tags = eventTags.split(";")
+
+ 	var contents = $("#info .content")
 		.empty()
-		.append($("<h5></h5>").text(eventData.Tags))
-		.append($("<p></p>").text(eventData.Description))
+		.append($("<h5></h5>").text(tags));
+
+	if (eventData.Image != "" && eventData.Image != null) {
+		contents
+			.append($("<img/>").attr('src', "/images/" + eventData.Image));
+	}
+
+	contents
+		.append($("<p></p>").append(eventData.Description))
 		.append(eventElement);
 	
-	$("#footnotes")
-		.empty()
-		.append($("<p class='divider'</p>").text(eventData.Footnotes));
+	var footnotes = eventData.Footnotes;
+	var notes = footnotes.split(";")
+		.filter(function(x) {
+			return x != "" && x != null;
+		});
 
+	$("#footnotes")
+		.empty();
+
+	if (notes.length > 0) {
+		var noteContainer = $("<div class='divider'</div>");
+
+		for (var i = 0; i < notes.length; i++) {
+			noteContainer.append($('<div class="note"/>').append(notes[i]));
+		}
+
+		$("#footnotes").append(noteContainer);
+	}
+
+	// next
 
 	function splitUpLocations(locations) {
 		var parts = locations.split(";");

@@ -113,6 +113,10 @@ h5 {
 .nap:hover{
 	color:#222;
 }
+.super {
+	vertical-align: super;
+	font-size: .7em;
+}
 
 #footnotes .divider {
 	border-top: 0.8px solid dimgrey;
@@ -120,6 +124,12 @@ h5 {
 	overflow-x: hidden;
 	overflow-y: auto;
 	height: 15%;
+}
+
+.note {
+	padding: .2em;
+	line-height: 1.2em;
+	text-indent: -1,5em;
 }
 
 #timeline-embed {
@@ -159,4 +169,9 @@ h5 {
 	left: 5pt;
 	overflow-x: hidden;
 	overflow-y: auto;
+}
+
+.content img {
+	float: left;
+    margin: 7px;
 }

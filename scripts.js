@@ -17,6 +17,9 @@ var _empireData =null;
 
 var selections = {};
 
+var altFile = location.search != null && location.search != "";
+var eventFile = altFile ? "eventDataNap.csv" : "eventData.csv";
+
 if (!String.prototype.format) {
   String.prototype.format = function() {
     var args = arguments;
@@ -29,7 +32,7 @@ if (!String.prototype.format) {
   };
 }
 
-var results = Papa.parse("eventData.csv", {
+var results = Papa.parse(eventFile, {
 	download: true,
 	header: true,
 	skipEmptyLines: true,
@@ -323,6 +326,7 @@ function populateTimeline(data) {
 		timelineEvent.group = group;*/
 
 		var value = parseDate(row.StartDate, true);
+		row.StartDate = value;
 		row.startDate = value;
 
 		if (!value) {
@@ -330,10 +334,10 @@ function populateTimeline(data) {
 				.append($("<div/>")
 				.text("The row " + row.id + " has no start date"));		
 		}
-
 		timelineEvent["start_date"] = value;
 		
 		var endDate = parseDate(row.EndDate);
+		row.EndDate = endDate;
 		if (endDate) {
 			timelineEvent["end_date"] = endDate;
 		}
@@ -375,6 +379,9 @@ function updateTimeline(timelineEvents) {
 
 	_timeline = timeline;
 	setEmpireColours();
+
+
+	$("#info").css("bottom", $("#timeline").height());
 }
 
 var _currentEmpireColours = null;
@@ -466,22 +473,53 @@ function displayEventOnMap(eventData)
 {
 	if (!eventData) return;
 
-	$("#infotitles")
+	var infoTitleDates = $("#infotitles")
 		.empty()
-		.append($("<h4></h4>").text(eventData.Title))
-		.append($("<h5></h5>").text(eventData.StartDate))
-		.append($("<h5></h5>").text(eventData.EndDate));
+		.append($('<h4 class="inline"></h4>').text(eventData.Title))
+		.append(" ");
+		
+		if (eventData.ForMoreSee != "" && eventData.ForMoreSee != null) {
+		infoTitleDates
+				.append($('<a class="nap" href="/?nap"></a>')
+					.attr("title", eventData.ForMoreSee)
+					.append('<i class="fa fa-map-o"</i>'));				
+	}
 
-	$("#info .content")
+	function formatDate(dateObject)
+	{
+		if (dateObject.day) {
+			return dateObject.day + "/" + dateObject.month + "/" + dateObject.year;
+
+		} else if (dateObject.month) {
+			return dateObject.month + "/" + dateObject.year;
+		} 
+
+		return dateObject.year;
+	}
+
+
+	infoTitleDates
+		.append("<br/>")
+		.append($("<b></b> ").text(formatDate(eventData.StartDate)));
+
+	if (eventData.EndDate != null && eventData.EndDate != "") {
+		infoTitleDates
+			.append(" - ")
+			.append($("<b></b>").text(formatDate(eventData.EndDate)));
+	}
+		
+
+ 	$("#info .content")
 		.empty()
 		.append($("<h5></h5>").text(eventData.Tags))
 		.append($("<p></p>").text(eventData.Description))
-		.append($("<p></p>").text(eventData.ForMoreSee))
 		.append($("<h4></h4>").text(eventData.RelatedEvents));
 	
 	$("#footnotes")
 		.empty()
 		.append($("<p class='divider'</p>").text(eventData.Footnotes));
+
+	
 
 	var location = eventData.Location;
 	
@@ -512,7 +550,7 @@ function displayEventOnMap(eventData)
 			latitude: loc.latitude,
 			longitude: loc.longitude,
 			radius: radius,
-			fillKey: 'blue'
+			fillKey: 'rgba(0, 62, 255, 0.51)'
 		}];
 
 	} else if (parts.length == 2) {
@@ -611,10 +649,6 @@ $(function() {
 		var heightDiff = mapHeight * scale - portHeight;
 		var translationOffsetY = heightDiff / 2;
 
-		// TODO: Bounds Checking!
-		//var boundX = Math.max(0, Math.min(panX, mapWidth - portWidth));
-		//console.log(boundX + ", " + panX + ", " + (mapWidth - portWidth));
-
 		_svg.selectAll("g")
 			.attr("transform", [
 				"translate(" + [panX, panY] + ")",
@@ -646,9 +680,11 @@ $(function() {
 		fills: {
 			defaultFill: "#C0C0C0"
 		},
-
 		geographyConfig: {
-			hideAntarctica: false
+			hideAntarctica: false,
+			highlightOnHover: true,
+       		highlightFillColor: '#4682B4',
+        	highlightBorderColor: '#FFF'	
 		},
 
 		done: function(datamap) {

@@ -31,14 +31,25 @@ h2 {
 	font-size: 1.1em;
 }
 
+h4 {
+	-webkit-margin-before: 0;
+}
+
+h5 {
+	font-weight: normal;
+	font-style: italic;
+	font-size: 11;
+}
+
 .pull-right {
 	float: right;
 }
 
 .menu-option {
 	float: left;
-	padding: 12pt;
-	color: #EEE;	
+	padding: 17pt;
+	color: #EEE;
+	font-size: 20;	
 }
 
 .hidden {
@@ -48,11 +59,6 @@ h2 {
 .menu-option:hover {
     background-color: #555;
 	color: #EEE;
-}
-.menu-option:active {
-    background-color: #555;
-	color: #EEE;
- 
 }
 
 #container {
@@ -74,6 +80,11 @@ h2 {
 
 #infotitles {
 	display: block;
+	margin-top: 0.5pt;
+}
+
+.inline {
+	display: inline-block;
 }
 
 #info {
@@ -95,8 +106,20 @@ h2 {
 	height: 75%;
 }
 
+.nap {
+	color: #797979;
+}
+
+.nap:hover{
+	color:#222;
+}
+
 #footnotes .divider {
 	border-top: 0.8px solid dimgrey;
+	font-size: 10;
+	overflow-x: hidden;
+	overflow-y: auto;
+	height: 15%;
 }
 
 #timeline-embed {

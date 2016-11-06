@@ -1,11 +1,11 @@
-StartDate,EndDate,Title,RelatedEvents,Description,Footnotes,Image,ForMoreSee,Ref,Location,Influences,Empire,Tags,,,,
-"// format must be yyyy/mm/dd. Be careful with dates after 1900, they require a ' at the beginning","// format yyyy or yyyy/mm/dd, be careful after 1900",,,,,,,,"// Use lat, long or 3 country codes. Use ; to divide multiple locations",,// use ; to divide,// use ; to divide,,,,
+StartDate,EndDate,Title,RelatedEvents,Description,Footnotes,Image,ForMoreSee,Ref,Location,Influences,Empire,Tags
+"// format must be yyyy/mm/dd. Be careful with dates after 1900, they require a ' at the beginning","// format yyyy or yyyy/mm/dd, be careful after 1900",,,,,,,,"// Use lat, long or 3 country codes. Use ; to divide multiple locations",,// use ; to divide,// use ; to divide
 1789,1792,The Third Anglo-Mysore War,,"Lorem ipsum dolor sit amet, oblique prompta quo ut, ea convenire petentium cum, an eos sumo tollit offendit. Te adhuc ancillae duo. Homero posidonium consectetuer est ex. Cum pertinax senserit te, te est dicat audire feugait, alia vulputate eam ea. Mel assum adolescens id, labore prodesset ius ad.
 
 Ei probo volumus prodesset has. Unum iisque definitionem in mea. Quando populo singulis et sit, ad scaevola persequeris vis. Audiam theophrastus at vel, erat persius pro te. Quando efficiantur at eos, assum detracto signiferumque vix at, ut vis dico simul albucius.
 
-Suas graece vim ad, no prima nonumy epicuri pri. Dictas perfecto dissentiet mei ut. Ea sea tota tantas, ut cum meis abhorreant comprehensam. Pri eu aliquip epicuri conclusionemque, ius duis tantas essent ei.",http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,,,,GBR; IND,,British; French,,,,,
-1889,,Small Pox Epidemic impacts Indigenous Australians,,Approximate Deaths: half of Indigenous population around Sydney,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,,,,"-33.868820, 151.209296",,British,,,,,
+Suas graece vim ad, no prima nonumy epicuri pri. Dictas perfecto dissentiet mei ut. Ea sea tota tantas, ut cum meis abhorreant comprehensam. Pri eu aliquip epicuri conclusionemque, ius duis tantas essent ei.",http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,,,,GBR; IND,,British; French,
+1889,,Small Pox Epidemic impacts Indigenous Australians,,Approximate Deaths: half of Indigenous population around Sydney,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,,,,"-33.868820, 151.209296",,British,
 1789,,First convict given land to farm,,"Lorem ipsum dolor sit amet, te sea unum delectus. Est ad summo convenire. Vel possim animal et. Eu est nullam facilis delicatissimi. Et nam autem singulis. Mazim officiis honestatis te eum.
 
 Utinam integre dolores ea per, eos vide graeco adipiscing ei, id soluta definitiones his. Inermis tibique nominavi ei pro, cu est accusam nominavi. Aperiam accusamus temporibus quo an. Est ea sint invenire, eos mundi facilisi salutatus et. Vis nobis minimum ex. At timeam recteque mel.
@@ -14,191 +14,191 @@ Paulo regione no ius, sea an lorem option debitis, nostrum adipisci te nec. Eu d
 
 Ei probo volumus prodesset has. Unum iisque definitionem in mea. Quando populo singulis et sit, ad scaevola persequeris vis. Audiam theophrastus at vel, erat persius pro te. Quando efficiantur at eos, assum detracto signiferumque vix at, ut vis dico simul albucius.
 
-Suas graece vim ad, no prima nonumy epicuri pri. Dictas perfecto dissentiet mei ut. Ea sea tota tantas, ut cum meis abhorreant comprehensam. Pri eu aliquip epicuri conclusionemque, ius duis tantas essent ei.",http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,,,,"-33.815000, 151.001111",,British,,,,,
-1792,1802,French Revolution,Napoleonic Wars,,,,,,FRA,,French,,,,,
+Suas graece vim ad, no prima nonumy epicuri pri. Dictas perfecto dissentiet mei ut. Ea sea tota tantas, ut cum meis abhorreant comprehensam. Pri eu aliquip epicuri conclusionemque, ius duis tantas essent ei.",http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,,,,"-33.815000, 151.001111",,British,
+1792,1802,French Revolution,Napoleonic Wars,,,,,,FRA,,French,
 24/11/1904,,The Lady Juliana arrives,,"Lorem ipsum dolor sit amet, oblique prompta quo ut, ea convenire petentium cum, an eos sumo tollit offendit. Te adhuc ancillae duo. Homero posidonium consectetuer est ex. Cum pertinax senserit te, te est dicat audire feugait, alia vulputate eam ea. Mel assum adolescens id, labore prodesset ius ad.
 
 Ei probo volumus prodesset has. Unum iisque definitionem in mea. Quando populo singulis et sit, ad scaevola persequeris vis. Audiam theophrastus at vel, erat persius pro te. Quando efficiantur at eos, assum detracto signiferumque vix at, ut vis dico simul albucius.
 
-Suas graece vim ad, no prima nonumy epicuri pri. Dictas perfecto dissentiet mei ut. Ea sea tota tantas, ut cum meis abhorreant comprehensam. Pri eu aliquip epicuri conclusionemque, ius duis tantas essent ei.",,,,,"GBR; -33.868820, 151.209296",,British,,,,,
-1791,1795,George Vancouver circumnavigates the world,,,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,GBR; CAN; USA,,British,Exploration,,,,
-1792,,The New York Stock Exchange is founded,,,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,"40.712784, -74.005941",,American,,,,,
-1792,,Sierra Leone falls under British control,,,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,"GBR; 8.460555,-11.779889",,British,Colonisation; Empire,,,,
-1793,,Louis XVI is executed,,Reign of Terror begins. 20 000 people are executed,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,"48.865371, 2.321524",,French,Politics; War; Tragedy,,,,
-1793/02/01,1815,Napoleonic Wars,French Revolution; The Holy Roman Empire is dissolved; Continental Blockade,"The Napoleonic Wars stemmed from the French Revolution, where they ""began as an effort to defend the Revolution and developed into wars of conquest over the empire.""<span class=""super"">1</span> These wars had a far-reaching affect upon the world, with frequent battles in today's Germany, Switzerland, Spain and Italy. However, these battles even reached as far as Russia and Egypt, with the final crippling battle happening in Britain. Additionally, it has been argued amongst historians about the influence the Napoleonic Wars had upon America, who are believed to have taken advantage of the wars economically.<span class=""super"">2</span> These wars also marked the collapse of the Holy Roman Empire and of Prussia. Furthermore, there are arguments that these wars were the birth of modern warfare. Warfare that would later become iconic of the World Wars. This was because, for one, ""the revolutionary and Napoleonic wars were the first national wars in which combatants were drawn directly from civilian society"".<span class=""super"">3</span>  Secondly there are also debates concerning whether these wars had the characteristics of 'Total War'. A concept that would not enter ""popular usage until the final stages of World War One"". <span class=""super"">4</span>  Vere provides an intriguing exploration of Bell's argument surrounding the potential influence of the Napoleonic Wars and their influence upon later wars, and modern warfare. <span class=""super"">5]</span> Whether these arguments and debates on the broader themes of the Napoleonic wars do or do not convince you, it cannot be denied that the Napoleonic Wars had a far-reaching affect and influence both in its own time period and those stretching beyond it. ","<span class=""super"">1</span> ""French Revolutionary Wars."" The Columbia Encyclopedia, 6th ed. Encyclopedia.com.(November 2, 2016). http://www.encyclopedia.com/reference/encyclopedias-almanacs-transcripts-and-maps/french-revolutionary-wars;<span class=""super"">2</span> Vergil Hasan (2013) American growth and Napoleonic Wars, Panoencomicus, 60:5;<span class=""super"">3</span> Marie-Cecile Thoral (2011) From Valmy to Waterloo: France at War 1792-1815, War, Culture and Soceity 1750-1850 Palgrave MacMillan: New York;<span class=""super"">4</span> Christopher Vere (2009) The Napoleonic Wars and the Birth of Modern Warfare, Intelligence and National Security, 24:3, 464-470;<span class=""super"">5</span> Ibid.",Napoleon.jpg,Click to see in more depth,,FRA; AUT; EGY; DEU; RUS; ITY; GBR; ESP,USA,French,Major Event; War,,,,
-1795,,France takes over control of Santo Domingo,,,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,"FRA; 18.486058, -69.931212",,French; Spanish,Empire; Colonisation,,,,
-1795,,Britain captures Cape Town,,,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,"GBR; -33.924869, 18.424055",,British; Dutch,Empire; Colonisation,,,,
-1796,,British Guiana becomes a British colony,,,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,"GBR; 4.860416, -58.93018",,British,Empire; Colonisation,,,,
-1796,,British forces occupy the coast of Sri Lanka,,,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,"GBR; 7.873054, 80.771797",,Dutch; British; French,Empire; Colonisation,,,,
-1796,,Dutch East India Company declares backruptcy,,,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,NLD,,Dutch,,,,,
-1797,,John Macarthur buys and imports the first Merino sheep,,,,,,,AUS,,British,Trade,,,,
-1798,,Vaccine for smallpox developed,,Edward Jenner,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,?,,,Health; Science; Drugs; Innovation,,,,
-1798,,Irish Rebellion,,,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,IRL,GBR,British,Politics,,,,
-1798,,The Dutch East India Company is wound up,,,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,NLD,,Dutch,Empire; Colonisation,,,,
-1799,,EIC Indian Opium monopoly fully established,,,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,GBR; IND; CHN,,British; Chinese,Drugs,,,,
-1799,,The Fourth Anglo-Mysore War,,British Victory,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,IND; GBR,,British; French,War,,,,
-1800,,World Population is 1 billion,,,,,,,WORLD,,,,,,,
-1800,,The White House is completed,,Build by Pierre L'Enfant,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,"38.901373, -77.037978; FRA",,American ,,,,,
-1800,1839,"US imports about 10,000 chests of Ottoman opium to China",,,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,USA; CHN,,American; Ottoman; Chinese,Drugs,,,,
-1801/01/01,,Act of Union ,,creates UK,,,,,GBR,,British,,,,,
-1801/07/18,1803/06/09,Matthew Flinders circumnavigates Australia,,,,,,,AUS,,British,,,,,
-1801,,London Stock Exchange is founded,,,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,"51.507351, -0.127758",,British,,,,,
-1803,,Second major settlement established in Australia,,,,,,,"-41.454520, 145.970665",,British,,,,,
-1803,,Britian hands Cape Town back to the Dutch,,,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,"-33.924869, 18.424055",GBR; NLD,British; Dutch,Empire; Colonisation,,,,
-1803,1805,Second Anglo-Maratha War,The Third Anglo-Maratha War,,,,,http://www.newworldencyclopedia.org/entry/Anglo-Maratha_Wars#Background,GBR; IND,,British,,,,,
-1805,,A German makes morphine from opium,,Friedrich Sertuner    (CHECK DATE!!),,,,amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,DEU,,,Health; Science; Drugs; Innovation,,,,
-1804,,First Railway Steam Locomotive,,Richard Trevithick,,,,,GBR,,British,Innovation,,,,
-1806,,Napoleon commissions the construction of the Arc de Triomphe in Paris,,,,,,amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,"48.873779, 2.295016",,French,Innovation; Napoleon,,,,
-1806,,Continental Blockade,Napoleonic Wars,"Implemented by Napoleon, the Continental Blockade was designed to weaken Great Britain through the destruction of British commerce[1]. By not allowing countries that were aligned with France or neutral to trade with Britain, therefore cutting them off. Britain reacted with a counterblockade, in the form of the 'Orders in Council' that were the main causes o the Anglo-American War of 1812""[2]. So while the Continental Blockade was designed to weaken Britain", it had further ranging influences in that it did not only impact upon Britain's prosperity but also of all those involved and whom became the targets of Britain's counter. While historians agree that had it worked, the Continental Blockade was a great stragety that could have won Napoleon the war[3].  However, due to Britian's overwhelming superiority at sea, Napoleon could not enforce the Blockage and it is regarded as the turning point in the war," as it led Napoleon to his doomed invasion of Russia and consequently his ultimate downfall[4]. ""","[1] ""Continental System"". Encyclopædia Britannica. Encyclopædia Britannica Online.
+Suas graece vim ad, no prima nonumy epicuri pri. Dictas perfecto dissentiet mei ut. Ea sea tota tantas, ut cum meis abhorreant comprehensam. Pri eu aliquip epicuri conclusionemque, ius duis tantas essent ei.",,,,,"GBR; -33.868820, 151.209296",,British,
+1791,1795,George Vancouver circumnavigates the world,,,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,GBR; CAN; USA,,British,Exploration
+1792,,The New York Stock Exchange is founded,,,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,"40.712784, -74.005941",,American,
+1792,,Sierra Leone falls under British control,,,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,"GBR; 8.460555,-11.779889",,British,Colonisation; Empire
+1793,,Louis XVI is executed,,Reign of Terror begins. 20 000 people are executed,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,"48.865371, 2.321524",,French,Politics; War; Tragedy
+1793/02/01,1815,Napoleonic Wars,French Revolution; The Holy Roman Empire is dissolved; Continental Blockade,"The Napoleonic Wars stemmed from the French Revolution, where they ""began as an effort to defend the Revolution and developed into wars of conquest over the empire.""<span class=""super"">1</span> These wars had a far-reaching affect upon the world, with frequent battles in today's Germany, Switzerland, Spain and Italy. However, these battles even reached as far as Russia and Egypt, with the final crippling battle happening in Britain. Additionally, it has been argued amongst historians about the influence the Napoleonic Wars had upon America, who are believed to have taken advantage of the wars economically.<span class=""super"">2</span> These wars also marked the collapse of the Holy Roman Empire and of Prussia. Furthermore, there are arguments that these wars were the birth of modern warfare. Warfare that would later become iconic of the World Wars. This was because, for one, ""the revolutionary and Napoleonic wars were the first national wars in which combatants were drawn directly from civilian society"".<span class=""super"">3</span>  Secondly there are also debates concerning whether these wars had the characteristics of 'Total War'. A concept that would not enter ""popular usage until the final stages of World War One"". <span class=""super"">4</span>  Vere provides an intriguing exploration of Bell's argument surrounding the potential influence of the Napoleonic Wars and their influence upon later wars, and modern warfare. <span class=""super"">5]</span> Whether these arguments and debates on the broader themes of the Napoleonic wars do or do not convince you, it cannot be denied that the Napoleonic Wars had a far-reaching affect and influence both in its own time period and those stretching beyond it. ","<span class=""super"">1</span> ""French Revolutionary Wars."" The Columbia Encyclopedia, 6th ed. Encyclopedia.com.(November 2, 2016). http://www.encyclopedia.com/reference/encyclopedias-almanacs-transcripts-and-maps/french-revolutionary-wars;<span class=""super"">2</span> Vergil Hasan (2013) American growth and Napoleonic Wars, Panoencomicus, 60:5;<span class=""super"">3</span> Marie-Cecile Thoral (2011) From Valmy to Waterloo: France at War 1792-1815, War, Culture and Soceity 1750-1850 Palgrave MacMillan: New York;<span class=""super"">4</span> Christopher Vere (2009) The Napoleonic Wars and the Birth of Modern Warfare, Intelligence and National Security, 24:3, 464-470;<span class=""super"">5</span> Ibid.",Napoleon.jpg,Click to see in more depth,,FRA; AUT; EGY; DEU; RUS; ITY; GBR; ESP,USA,French,Major Event; War
+1795,,France takes over control of Santo Domingo,,,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,"FRA; 18.486058, -69.931212",,French; Spanish,Empire; Colonisation
+1795,,Britain captures Cape Town,,,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,"GBR; -33.924869, 18.424055",,British; Dutch,Empire; Colonisation
+1796,,British Guiana becomes a British colony,,,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,"GBR; 4.860416, -58.93018",,British,Empire; Colonisation
+1796,,British forces occupy the coast of Sri Lanka,,,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,"GBR; 7.873054, 80.771797",,Dutch; British; French,Empire; Colonisation
+1796,,Dutch East India Company declares backruptcy,,,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,NLD,,Dutch,
+1797,,John Macarthur buys and imports the first Merino sheep,,,,,,,AUS,,British,Trade
+1798,,Vaccine for smallpox developed,,Edward Jenner,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,?,,,Health; Science; Drugs; Innovation
+1798,,Irish Rebellion,,,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,IRL,GBR,British,Politics
+1798,,The Dutch East India Company is wound up,,,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,NLD,,Dutch,Empire; Colonisation
+1799,,EIC Indian Opium monopoly fully established,,,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,GBR; IND; CHN,,British; Chinese,Drugs
+1799,,The Fourth Anglo-Mysore War,,British Victory,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,IND; GBR,,British; French,War
+1800,,World Population is 1 billion,,,,,,,WORLD,,,
+1800,,The White House is completed,,Build by Pierre L'Enfant,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,"38.901373, -77.037978; FRA",,American ,
+1800,1839,"US imports about 10,000 chests of Ottoman opium to China",,,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,USA; CHN,,American; Ottoman; Chinese,Drugs
+1801/01/01,,Act of Union ,,creates UK,,,,,GBR,,British,
+1801/07/18,1803/06/09,Matthew Flinders circumnavigates Australia,,,,,,,AUS,,British,
+1801,,London Stock Exchange is founded,,,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,"51.507351, -0.127758",,British,
+1803,,Second major settlement established in Australia,,,,,,,"-41.454520, 145.970665",,British,
+1803,,Britian hands Cape Town back to the Dutch,,,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,"-33.924869, 18.424055",GBR; NLD,British; Dutch,Empire; Colonisation
+1803,1805,Second Anglo-Maratha War,The Third Anglo-Maratha War,,,,,http://www.newworldencyclopedia.org/entry/Anglo-Maratha_Wars#Background,GBR; IND,,British,
+1805,,A German makes morphine from opium,,Friedrich Sertuner    (CHECK DATE!!),,,,amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,DEU,,,Health; Science; Drugs; Innovation
+1804,,First Railway Steam Locomotive,,Richard Trevithick,,,,,GBR,,British,Innovation
+1806,,Napoleon commissions the construction of the Arc de Triomphe in Paris,,,,,,amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,"48.873779, 2.295016",,French,Innovation; Napoleon
+1806,,Continental Blockade,Napoleonic Wars,"Implemented by Napoleon, the Continental Blockade was designed to weaken Great Britain through the destruction of British commerce[1]. By not allowing countries that were aligned with France or neutral to trade with Britain, therefore cutting them off. Britain reacted with a counterblockade, in the form of the 'Orders in Council' that were the main causes o the Anglo-American War of 1812""[2]. So while the Continental Blockade was designed to weaken Britain, it had further ranging influences in that it did not only impact upon Britain's prosperity but also of all those involved and whom became the targets of Britain's counter. While historians agree that had it worked,  the Continental Blockade was a great stragety that could have won Napoleon the war[3].  However, due to Britian's overwhelming superiority at sea, Napoleon could not enforce the Blockage and it is regarded as the turning point in the war,  Napoleon could not enforce the Blockage and it is regarded as the turning point in the war,  as it led Napoleon to his doomed invasion of Russia and consequently his ultimate downfall[4]. """,,"[1] ""Continental System"". Encyclopædia Britannica. Encyclopædia Britannica Online.
 Encyclopædia Britannica Inc., 2016. Web. 04 Nov. 2016
 https://www.britannica.com/event/Continental-System; [2] Ibid; [3] Dugdale-Pointon, T. (25 December 2000), Continental System, http://www.historyofwar.org/articles/concepts_continentalsystem..html; [4] Ibid; ""Continental System"". Encyclopædia Britannica. Encyclopædia Britannica Online.
 Encyclopædia Britannica Inc., 2016. Web. 04 Nov. 2016
 <https://www.britannica.com/event/Continental-System>.
-",,,amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,GBR,FRA; USA,British
-1806,,Britain takes control of the Cape Colony,,,,,,amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,"GBR; 36.019605, -76.581609",NDL,British,Colonisation,,,,
-1806,,The Holy Roman Empire is dissolved,Napoleonic Wars,,,,,amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/ & http://www.historytoday.com/richard-cavendish/end-holy-roman-empire,DEU,,French,Napoleon,,,,
-1807,,US bans importation of Slaves,,,,,,,USA,,American,Slaves,,,,
-1807,,First commercial Steamboat built by Robert Fulton,,,,,,amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,FRA,,French,Innovation,,,,
-1807/03/25,,Britain abolishes the slave trade,,,,,,Date confirmed at amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,GBR,,British,Slave,,,,
-1808,,The Enclosure Act,,,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,GBR,,British,,,,,
-1808,,Santo Domingo returns to Spanish control,,,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,"ESP; 18.486058, -69.931212",FRA,Spanish,,,,,
-1808,,Thousand of freed slaves are settled in Sierra Leone,,,,,,,GBR; SLE,,British,Slaves,,,,
-1810,,Chile declares independence from Spain,,recognised 1844,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,CHL; ESP,,Spanish,Empire; Colonisation,,,,
-1811,,Venezuela declares independence from Spain,,winning it by 1823,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,VCT; ESP,,Spanish,Empire; Colonisation,,,,
-1812/06/18,1815/02/17,War of 1812,,,,,,,USA; GBR,,American,Major; War,,,,
-1813,,The first batch of commercial Merino wool leaves Sydney for England,,,,,,http://www.aushistorytimeline.com/," -33.868820, 151.209296; GBR",,British,,,,,
-1814,,The Coalition captures Paris and Napoleon is send to exile on the Island of Elba,,,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,France; Scandinavia; Russia; Germany; Austria; Spain; Britain,,French,War; Napoleon,,,,
-1814,,Louis XVIII restored as French Monarch,,,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,FRA,,French,Monarchy,,,,
-1814,,Tobago becomes a British Colony,,,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,GBR; TTO,,British,Empire; Colonisation,,,,
-1814,,Cape Town is seded to Britain in the Anglo-Dutch Treaty,,,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,"GBR; -33.924869, 18.424055",NLD,British; Dutch,Empire; Colonisation,,,,
-1815,,Britain takes control of Sri Lanka,,,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,GBR; LKA,,British,Empire; Colonisation,,,,
-1816,,Argentina declares independence from Spain,,winning it 1826,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,ARG; ESP,,Spanish,Empire; Colonisation,,,,
-1817,1818,The Third Anglo-Maratha War,Second Anglo-Maratha War,,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,GBR; IND,,British,Empire; Colonisation; War,,,,
-1817,1822,Philip Parker King circumnavigates Australia,,,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,AUS,,British,Exploration,,,,
-1819/08/16,,Peterloo Massacre,,,,,,,"53.483959, -2.244644",,British,"Politics, Tragedy",,,,
-1819,,Britain sets up a trading post in Singapore,,,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,GBR; SGP,,British,Empire; Colonisation,,,,
-1819,1820,William Parry explores the Artic,,,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,Britain; Canada,,,Exploration,,,,
-1820,,First sighting of Antarctica,,by Febian Bellingshausen,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,Russia; Antarctic; Britain; USA,,Russia,Exploration,,,,
-1821,,Peru declares independence from Spain,,,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,PER; ESP,,Spanish,Empire; Colonisation,,,,
-1822,,First mechanical computer designed,,by Charles Babbage,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,GBR,,British,Innovation,,,,
-1822,,The first Expresson machine is made,,,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,FRA,,French,Innovation,,,,
-1823,,France invades Spain,,,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,FRA;ESPSpain,,French,War,,,,
-1823,,The Monroe Doctrine,,,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,USA; GBR; South America; Central America,,American,Colonisation,,,,
-1826,,End of the First Anglo-Burmese War,,,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,GBR; IND; MMR,Check!!!,British,Empire; Colonisation,,,,
-1827,,The match is invented,,John Walker,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,GBR,,British,Innovation,,,,
-1827,,Commercial production of morphine starts,,E. Merck & co,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,DEU,,,Drugs,,,,
-1829,,"Perth, WA is established",,,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,"-31.950527, 115.860457",,British,Colonisation,,,,
-1829,,State of Western Australia Created,,,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,"-27.672817, 121.62831",,British,colonisationg,,,,
-1830/06/26,,"George IV dies, succeeded by William IV",,,,,,,GBR,,British,Monarchy,,,,
-1831,,Voyage of the Beagle,,Charles Darwin,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,GBR;South America,,British,Exploration,,,,
-1832,,Codeine is isolated from opium,,Pierre Robiquet,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,FRA,,French,Innovation; Drugs,,,,
-1833,,Factory Act,,Restricts work hours for women and children,,,,,GBR,,British,Industry; Women,,,,
-1833,,Britain re-established rule in the Falkland Islands,,,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,"GBR; -51.796253, -59.523613",,British,Empire; Colonisation,,,,
-1834,,The refrigerator is invented,,Jacob Perkins - introduction of the vapor-compression refrigeration cyle,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,USA,,American,Innovation,,,,
-1835,,Morse Code is invented,,Samuel Morse,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,USA,,American,Innovation,,,,
-1836,,Sam Colt receives a patent for his revolver,,,,,,,USA,,American,Innovation,,,,
-1836,,"Adelaide, SA is established",,,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,"-34.928499, 138.600746",,British,Colonisation,,,,
-1836,,South Australia is created as a state,,,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,"-30.000232, 136.209155",,British,Colonisation,,,,
-1837/06/20,,Queen Victoria comes to the throne,,,,,,,GBR,,British,Monarchy,,,,
-1838,,Charles Dickens' Oliver Twist,,,,,,,GBR,,British,Literature,,,,
-1838,,Slavery abolished in the British empire,,1833??? According to http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,,,,,GBR,British Empire,British,Slavery,,,,
-1838/09/17,,Railway boom starts,,,,,,,GBR,,British,Industry,,,,
-1839,1842,First Opium War,Second Opium War; Royal Commission on Opium; China and Britain agree to stop the opium trade,,,,,,GBR; CHN,,British,War; Drugs,,,,
-1838,1839,Myall Creek Massacre,,Deaths: 30,,,,,"-29.778966, 150.742909",,British,Major; Colonisation; Tragedy,,,,
-1839,,British Government abolish the convict assignment system,,Transportation of convicts to mainland cease,,,,,GBR; AUS,British ,British,Colonisation,,,,
-1840/06,,Vaccination for the poor is introduced,,,,,,,GBR,,British,Health,,,,
-1841,,Coffee Plunger is invented,,by Elizabeth Bakin,,,,,GBR,,British,Innovation; Women,,,,
-1841,,Britain makes New Zealand a colony,,,,,,,GBR; NZL,,British,Colonisation,,,,
-1843,,Charles Thurber invents a typewriter,,,,,,Confirmed by http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,USA,,American,Innovation,,,,
-1844,,"Australia introduces the ""Protection of Children Act",,,,,,,AUS,,British,Colonisation,,,,
-1845/09,1852,Irish potato Famine,,Approximate Deaths: a million,,,,,IRL,,British,,,,,
-1846,,The Sewing machine is invented,,Elias Howe,,,,,USA,,American,Innovation; Women?,,,,
-1846,,The Oregon Treaty,,,,,,,USA; GBR,,American,Politics,,,,
-1848/07,,Public Health Act,,,,,,,GBR,,British,Health,,,,
-1848,,The Anti-Transportation League is estastabished,,,,,,,AUS,,British,,,,,
-1848,,An ancient skull found,,Neanderthal,,,,,"36.140751, -5.353585",,,Science,,,,
-1851,,Victoria is created as a state of Australia,,,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,"-37.471308, 144.785153",,British,,,,,
-1851,,Gold Rush ,,"""Australia's population doubles in 10 years"" http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/",,,,Confirmed by http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,"-37.471308, 144.785153",,British,,,,,
-1851,,Gold Rush ,,,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,"-33.181041, 149.177271",,British,,,,,
-1851,,The Great Exhibition,,,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,"51.419882, -0.078542",,,Innovation,,,,
-1852,,The Second Anglo-Burmese War,,,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,GBR; MMR,CCHECK,,Opium; War,,,,
-1853/10,1856/02,Crimean War,,,,,,Confirmed http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,FRA; RUS; GBR; TUR,,French,War,,,,
-1853,,New Zealand gains independence,,,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,NZL,,British,Colonisation,,,,
-1854,,First commercial oil well,,,,,,,POL,,,Innovation,,,,
-1856,1860,Second Opium War,First Opium War; China and Britain agree to stop the opium trade; Royal Commission on Opium,Opium trade is legalised,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,GBR; FRA; CHN,,French,War; Opium,,,,
-1856,,New South Wales gains independent government from the UK,,,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,"-33.868820, 151.209296",,British,Colonisation,,,,
-1857,,Indian Rebellion ,,concerning British rule in India,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,IND; GBR,,British,Empire,,,,
-1858,,The Government of India Act,,Becomes crown colony,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,IDN,GBR,British,Empire,,,,
-1858,,The British Raj begins,,India ruled by Britain as a Crown Colony,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,GBR; INDI,,British,Empire,,,,
-1858,,The Irish Republication Brotherhood is found,,,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,IRL,,British,,,,,
-1859/11/24,,Charles Darwin releases 'On the origin of species',,,,,,,GBR,,British,Literature; Science,,,,
-1859,,Queensland created as a state of Australia,,,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,"-20.917574, 142.702796",,British,,,,,
-1859,1869,Construction of the Suez Canal,Suez Canal Opens,,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,"29.931389, 32.562778",IND; CHN; GBR,,Innovation,,,,
-1860,,Burke and Wills cross Australia,,Both Die,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,AUS,,British,Exploration,,,,
-1861,,Gold Discovered ,,,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,"-44.831093, 169.644227",,British,,,,,
-1861,,Abraham Lincoln becomes President of the United States,,,,,,,USA,,American,Politics,,,,
-1861,1865,American Civil War,,,,,,,USA,,American,Major; War; Salvery,,,,
-1861/12/14,,Prince Albert Dies,,,,,,,GBR,,British,Monarchy,,,,
-1862,,France acquires Cochin-China,,,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,FRA; VNM,CHN,France,Empire; Colonisation,,,,
-1863,,Emancipation Proclamation becomes law,,,,,,,USA,,American,Politics,,,,
-1863,,The first Underground opens,,,,,,,"51.507351, -0.127758",,British,Innovation,,,,
-1865/04/14,,President Linchol is assassinated,,,,,,,"38.901373, -77.037978",,American,Politics,,,,
-1866,,The Civil Rights Act,,,,,,,USA,,American,,,,,
-1866,,Ku Klux Klan is founded,,,,,,,USA,,American,,,,,
-1867,,Alaska is purchased from Russia,,,,,,,RUS; USA,,American,,,,,
-1868,,Transportation of Convicts ends,,,,,,,GBR; AUS,,British,,,,,
-1869/11/17,,Suez Canal Opens,Construction of the Suez Canal,,,,,,"29.931389, 32.562778",IND; CHN; GBR,British,Colonisation ???,,,,
-1870,,British Troops withdrawn from Australia,,Responsible for their own defence,,,,,AUS; GBR,,British,,,,,
-1870/08/09,,Women obtain rights to retain their property after marriage,,,,,,,GBR,,British,Women,,,,
-1871,,Treaty of Washington,,,,,,,GBR; USA,,American,,,,,
-1871,,The Great Chicago Fire,,,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,"41.878114, -87.629798",,American,,,,,
-1871,,Charles Darwin publishes The Descent of Man,,,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,GBR,,British,,,,,
-1872/07/18,,Voting by secret ballot is introduced,,,,,,,GBR,,British,Politics,,,,
-1874,,East India Trading Company is wound up,,,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,GBR,,British,Empire,,,,
-1874,,Germany is suffering a small pox epodemic. Vaccination becomes mandatory,,,,,,,DEU,,,Health,,,,
-1875,,Egypt declares bankrupcy,Egypt's Bankrupty results in Anglo-French control,"Due to overspending ""during the cotton boom whilst the American Civil War"" http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/",,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,EGY,,,,,,,
-1876,,Egypt's Bankrupty results in Anglo-French control,Egypt declares bankrupcy,,,,,,EGY,,French; British,,,,,
-1875,,The Light Bulb is invented,,Thomas Edison,,,,,CAN,,,Innovation,,,,
-1876,,Alexander Graham Bell invents the telephone,,,,,,,,,,Innovation,,,,
-1877,,Thomas Edison develops the gramophone and phonograph,,,,,,,,,,Innovation,,,,
-1878/07/13,,Congress of Berlin,,,,,,,,,,,,,,
-1878,1880,Ned Kelly,,,,,,,AUS,,British,,,,,
-1880/08/02,,Education becomes compulsory for children under 10,,,,,,,GBR,,British,Education,,,,
-1883/01/01,,Married women obtain the right to acquire their own property,,,,,,,GBR,,British,Women,,,,
-1886,,Radio Signal,,Heinrich Hertz,,,,,DEU,,,Innovation,,,,
-1888,,Jack the Ripper,,,,,,,"51.507351, -0.127758",,British,Women,,,,
-1890,1899,Gold Discovered ,,,,,,,"-27.672817, 121.62831",,British,Gold,,,,
-1891,,The zipper is developed,,W.L Judson,,,,,USA,,American,Innovation,,,,
-1891,,First public old-age pension system,,,,,,,DEU,,,Politics,,,,
-1892,,Smog Event,,Died:,,,,,"51.507351, -0.127758",,British,,,,,
-1892,,Last Great Outbreak of cholera in Europe,,,,,,,Germany,,,Health,,,,
-1893,,Women given the vote in national elections,,,,,,,NZL,,British,Politics; Women,,,,
-1894,,"Women given the vote, and the right to stand for Parliament",,,,,,,"-30.000232, 136.209155",,British,,,,,
-1894,,Franco-Russian Alliance announced,,,,,,,FRA; DEU; RUS,,French,Politics ,,,,
-1894,,Royal Commission on Opium,irst Opium War; Second Opium War; China and Britain agree to stop the opium trade,,,,,,GBR; CHN; IND,,British,Opium,,,,
-1895,,Wilhelm Roentgen develops X-rays,,,,,,Confirmed http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,DEU,,,Innovation,,,,
-1895,,Studies in Hysteria,,Josef Breuer and Sigmund Frued,,,,,???,,,Women,,,,
-1897,,Underground system opens,,,,,,,"42.360082, -71.05888",,American,Innovation,,,,
-1898,,Flashbulb photography,,,,,,,,,,Innovation,,,,
-1899,,The Tape Recorder is developed,,Valdermar Poulsen,,,,,DNK,,,Innovation,,,,
-1899/10/10,1902,Second Boer War,,,,,,,Britain; South Africa; Netherlands; Africa,,British,War,,,,
-1900,,World Population is roughly 1.7 Billion,,,,,,,WORLD,,,Major,,,,
-22/01/1901,,"Queen Victoria dies, succeeded by Edward VII",,,,,,,GBR,,British,Monarchy,,,,
-1/01/1901,,The Federation of Australia,,,,,,,AUS,,British,Politics,,,,
-15/03/1905,,The Immigration Restriction Act known as the 'White Australian Policy' is passed,,,,,,,AUS,,,,,,,
-1902,,Women get the vote in Australia,,,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,AUS,,,Politics; Women,,,,
-1903,,First successful Powered flight,,The wright Brothers,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,AUS,,,Innovation,,,,
-1904,,Entente Cordial,,,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,FRA; GBR,,French,Politics ,,,,
-1905,,Albert Einstein published his paper on The Special Theory of Relativity,,,,,,,DEU,,,Innovation; Science,,,,
-1905,,Women get the vote ,,,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,FIN,,Dutch,Politics; Women,,,,
-1905,,Albert Einstein develops E=mc2 equarion,,,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,DEU,,,Innovation; Science,,,,
-1907,,The helicopter is invented,,Paul Corny,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,FRA ,,French,Innovation,,,,
-1907,,Colour Photography is invented,,by Auguste and Louis Lumiere,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,FRA,,French,Innovation,,,,
-1908,,Canberra is selected as Australia's capital,,,,,,,"-35.307500, 149.124417",,,,,,,
-1910,,South Africa gains independence from Britain,,,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,ZAF; GBR,,British,Colonisation,,,,
-1910,,China and Britain agree to stop the opium trade,First Opium War; Second Opium War; Royal Commission on Opium,,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,GBR; CHN; IND,,British,Opium,,,,
-1911,,The Northern Territory is created as a Australian State,,,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,"-19.491411, 132.55096",,,Colonisation,,,,
-1913,,Women get the vote,,,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,NOR,,Dutch,Politics; Women,,,,
-1914,,Archduke Franz Ferdinand and his wife are assassinated,,by Gavrilo Prinip,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,"SRB; 43.826143, 18.305567",,,War,,,,
-1914,,Austria-Hungary declares war upon Serbia,,Russia moblizes its army in defence,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,RUS; AUT; HUN,,,War,,,,
-1914,,World War One begins,,,,,,,FRA; DEU; AUT; GBR; NLD; USA; RUS; IND; Africa; ITA; TUR; JPN; CAN; AUS; NZL; SWE; DEN; FIN; NOR,,,War,,,,
+", ,amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,GBR,FRA; USA,British,
+1806,,Britain takes control of the Cape Colony,,,,,,amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,"GBR; 36.019605, -76.581609",NDL,British,Colonisation
+1806,,The Holy Roman Empire is dissolved,Napoleonic Wars,,,,,amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/ & http://www.historytoday.com/richard-cavendish/end-holy-roman-empire,DEU,,French,Napoleon
+1807,,US bans importation of Slaves,,,,,,,USA,,American,Slaves
+1807,,First commercial Steamboat built by Robert Fulton,,,,,,amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,FRA,,French,Innovation
+1807/03/25,,Britain abolishes the slave trade,,,,,,Date confirmed at amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,GBR,,British,Slave
+1808,,The Enclosure Act,,,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,GBR,,British,
+1808,,Santo Domingo returns to Spanish control,,,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,"ESP; 18.486058, -69.931212",FRA,Spanish,
+1808,,Thousand of freed slaves are settled in Sierra Leone,,,,,,,GBR; SLE,,British,Slaves
+1810,,Chile declares independence from Spain,,recognised 1844,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,CHL; ESP,,Spanish,Empire; Colonisation
+1811,,Venezuela declares independence from Spain,,winning it by 1823,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,VCT; ESP,,Spanish,Empire; Colonisation
+1812/06/18,1815/02/17,War of 1812,,,,,,,USA; GBR,,American,Major; War
+1813,,The first batch of commercial Merino wool leaves Sydney for England,,,,,,http://www.aushistorytimeline.com/," -33.868820, 151.209296; GBR",,British,
+1814,,The Coalition captures Paris and Napoleon is send to exile on the Island of Elba,,,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,France; Scandinavia; Russia; Germany; Austria; Spain; Britain,,French,War; Napoleon
+1814,,Louis XVIII restored as French Monarch,,,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,FRA,,French,Monarchy
+1814,,Tobago becomes a British Colony,,,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,GBR; TTO,,British,Empire; Colonisation
+1814,,Cape Town is seded to Britain in the Anglo-Dutch Treaty,,,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,"GBR; -33.924869, 18.424055",NLD,British; Dutch,Empire; Colonisation
+1815,,Britain takes control of Sri Lanka,,,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,GBR; LKA,,British,Empire; Colonisation
+1816,,Argentina declares independence from Spain,,winning it 1826,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,ARG; ESP,,Spanish,Empire; Colonisation
+1817,1818,The Third Anglo-Maratha War,Second Anglo-Maratha War,,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,GBR; IND,,British,Empire; Colonisation; War
+1817,1822,Philip Parker King circumnavigates Australia,,,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,AUS,,British,Exploration
+1819/08/16,,Peterloo Massacre,,,,,,,"53.483959, -2.244644",,British,"Politics, Tragedy"
+1819,,Britain sets up a trading post in Singapore,,,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,GBR; SGP,,British,Empire; Colonisation
+1819,1820,William Parry explores the Artic,,,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,Britain; Canada,,,Exploration
+1820,,First sighting of Antarctica,,by Febian Bellingshausen,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,Russia; Antarctic; Britain; USA,,Russia,Exploration
+1821,,Peru declares independence from Spain,,,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,PER; ESP,,Spanish,Empire; Colonisation
+1822,,First mechanical computer designed,,by Charles Babbage,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,GBR,,British,Innovation
+1822,,The first Expresson machine is made,,,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,FRA,,French,Innovation
+1823,,France invades Spain,,,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,FRA;ESPSpain,,French,War
+1823,,The Monroe Doctrine,,,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,USA; GBR; South America; Central America,,American,Colonisation
+1826,,End of the First Anglo-Burmese War,,,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,GBR; IND; MMR,Check!!!,British,Empire; Colonisation
+1827,,The match is invented,,John Walker,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,GBR,,British,Innovation
+1827,,Commercial production of morphine starts,,E. Merck & co,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,DEU,,,Drugs
+1829,,"Perth, WA is established",,,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,"-31.950527, 115.860457",,British,Colonisation
+1829,,State of Western Australia Created,,,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,"-27.672817, 121.62831",,British,colonisationg
+1830/06/26,,"George IV dies, succeeded by William IV",,,,,,,GBR,,British,Monarchy
+1831,,Voyage of the Beagle,,Charles Darwin,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,GBR;South America,,British,Exploration
+1832,,Codeine is isolated from opium,,Pierre Robiquet,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,FRA,,French,Innovation; Drugs
+1833,,Factory Act,,Restricts work hours for women and children,,,,,GBR,,British,Industry; Women
+1833,,Britain re-established rule in the Falkland Islands,,,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,"GBR; -51.796253, -59.523613",,British,Empire; Colonisation
+1834,,The refrigerator is invented,,Jacob Perkins - introduction of the vapor-compression refrigeration cyle,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,USA,,American,Innovation
+1835,,Morse Code is invented,,Samuel Morse,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,USA,,American,Innovation
+1836,,Sam Colt receives a patent for his revolver,,,,,,,USA,,American,Innovation
+1836,,"Adelaide, SA is established",,,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,"-34.928499, 138.600746",,British,Colonisation
+1836,,South Australia is created as a state,,,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,"-30.000232, 136.209155",,British,Colonisation
+1837/06/20,,Queen Victoria comes to the throne,,,,,,,GBR,,British,Monarchy
+1838,,Charles Dickens' Oliver Twist,,,,,,,GBR,,British,Literature
+1838,,Slavery abolished in the British empire,,1833??? According to http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,,,,,GBR,British Empire,British,Slavery
+1838/09/17,,Railway boom starts,,,,,,,GBR,,British,Industry
+1839,1842,First Opium War,Second Opium War; Royal Commission on Opium; China and Britain agree to stop the opium trade,,,,,,GBR; CHN,,British,War; Drugs
+1838,1839,Myall Creek Massacre,,Deaths: 30,,,,,"-29.778966, 150.742909",,British,Major; Colonisation; Tragedy
+1839,,British Government abolish the convict assignment system,,Transportation of convicts to mainland cease,,,,,GBR; AUS,British ,British,Colonisation
+1840/06,,Vaccination for the poor is introduced,,,,,,,GBR,,British,Health
+1841,,Coffee Plunger is invented,,by Elizabeth Bakin,,,,,GBR,,British,Innovation; Women
+1841,,Britain makes New Zealand a colony,,,,,,,GBR; NZL,,British,Colonisation
+1843,,Charles Thurber invents a typewriter,,,,,,Confirmed by http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,USA,,American,Innovation
+1844,,"Australia introduces the ""Protection of Children Act",,,,,,,AUS,,British,Colonisation
+1845/09,1852,Irish potato Famine,,Approximate Deaths: a million,,,,,IRL,,British,
+1846,,The Sewing machine is invented,,Elias Howe,,,,,USA,,American,Innovation; Women?
+1846,,The Oregon Treaty,,,,,,,USA; GBR,,American,Politics
+1848/07,,Public Health Act,,,,,,,GBR,,British,Health
+1848,,The Anti-Transportation League is estastabished,,,,,,,AUS,,British,
+1848,,An ancient skull found,,Neanderthal,,,,,"36.140751, -5.353585",,,Science
+1851,,Victoria is created as a state of Australia,,,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,"-37.471308, 144.785153",,British,
+1851,,Gold Rush ,,"""Australia's population doubles in 10 years"" http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/",,,,Confirmed by http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,"-37.471308, 144.785153",,British,
+1851,,Gold Rush ,,,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,"-33.181041, 149.177271",,British,
+1851,,The Great Exhibition,,,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,"51.419882, -0.078542",,,Innovation
+1852,,The Second Anglo-Burmese War,,,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,GBR; MMR,CCHECK,,Opium; War
+1853/10,1856/02,Crimean War,,,,,,Confirmed http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,FRA; RUS; GBR; TUR,,French,War
+1853,,New Zealand gains independence,,,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,NZL,,British,Colonisation
+1854,,First commercial oil well,,,,,,,POL,,,Innovation
+1856,1860,Second Opium War,First Opium War; China and Britain agree to stop the opium trade; Royal Commission on Opium,Opium trade is legalised,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,GBR; FRA; CHN,,French,War; Opium
+1856,,New South Wales gains independent government from the UK,,,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,"-33.868820, 151.209296",,British,Colonisation
+1857,,Indian Rebellion ,,concerning British rule in India,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,IND; GBR,,British,Empire
+1858,,The Government of India Act,,Becomes crown colony,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,IDN,GBR,British,Empire
+1858,,The British Raj begins,,India ruled by Britain as a Crown Colony,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,GBR; INDI,,British,Empire
+1858,,The Irish Republication Brotherhood is found,,,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,IRL,,British,
+1859/11/24,,Charles Darwin releases 'On the origin of species',,,,,,,GBR,,British,Literature; Science
+1859,,Queensland created as a state of Australia,,,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,"-20.917574, 142.702796",,British,
+1859,1869,Construction of the Suez Canal,Suez Canal Opens,,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,"29.931389, 32.562778",IND; CHN; GBR,,Innovation
+1860,,Burke and Wills cross Australia,,Both Die,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,AUS,,British,Exploration
+1861,,Gold Discovered ,,,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,"-44.831093, 169.644227",,British,
+1861,,Abraham Lincoln becomes President of the United States,,,,,,,USA,,American,Politics
+1861,1865,American Civil War,,,,,,,USA,,American,Major; War; Salvery
+1861/12/14,,Prince Albert Dies,,,,,,,GBR,,British,Monarchy
+1862,,France acquires Cochin-China,,,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,FRA; VNM,CHN,France,Empire; Colonisation
+1863,,Emancipation Proclamation becomes law,,,,,,,USA,,American,Politics
+1863,,The first Underground opens,,,,,,,"51.507351, -0.127758",,British,Innovation
+1865/04/14,,President Linchol is assassinated,,,,,,,"38.901373, -77.037978",,American,Politics
+1866,,The Civil Rights Act,,,,,,,USA,,American,
+1866,,Ku Klux Klan is founded,,,,,,,USA,,American,
+1867,,Alaska is purchased from Russia,,,,,,,RUS; USA,,American,
+1868,,Transportation of Convicts ends,,,,,,,GBR; AUS,,British,
+1869/11/17,,Suez Canal Opens,Construction of the Suez Canal,,,,,,"29.931389, 32.562778",IND; CHN; GBR,British,Colonisation ???
+1870,,British Troops withdrawn from Australia,,Responsible for their own defence,,,,,AUS; GBR,,British,
+1870/08/09,,Women obtain rights to retain their property after marriage,,,,,,,GBR,,British,Women
+1871,,Treaty of Washington,,,,,,,GBR; USA,,American,
+1871,,The Great Chicago Fire,,,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,"41.878114, -87.629798",,American,
+1871,,Charles Darwin publishes The Descent of Man,,,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,GBR,,British,
+1872/07/18,,Voting by secret ballot is introduced,,,,,,,GBR,,British,Politics
+1874,,East India Trading Company is wound up,,,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,GBR,,British,Empire
+1874,,Germany is suffering a small pox epodemic. Vaccination becomes mandatory,,,,,,,DEU,,,Health
+1875,,Egypt declares bankrupcy,Egypt's Bankrupty results in Anglo-French control,"Due to overspending ""during the cotton boom whilst the American Civil War"" http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/",,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,EGY,,,
+1876,,Egypt's Bankrupty results in Anglo-French control,Egypt declares bankrupcy,,,,,,EGY,,French; British,
+1875,,The Light Bulb is invented,,Thomas Edison,,,,,CAN,,,Innovation
+1876,,Alexander Graham Bell invents the telephone,,,,,,,,,,Innovation
+1877,,Thomas Edison develops the gramophone and phonograph,,,,,,,,,,Innovation
+1878/07/13,,Congress of Berlin,,,,,,,,,,
+1878,1880,Ned Kelly,,,,,,,AUS,,British,
+1880/08/02,,Education becomes compulsory for children under 10,,,,,,,GBR,,British,Education
+1883/01/01,,Married women obtain the right to acquire their own property,,,,,,,GBR,,British,Women
+1886,,Radio Signal,,Heinrich Hertz,,,,,DEU,,,Innovation
+1888,,Jack the Ripper,,,,,,,"51.507351, -0.127758",,British,Women
+1890,1899,Gold Discovered ,,,,,,,"-27.672817, 121.62831",,British,Gold
+1891,,The zipper is developed,,W.L Judson,,,,,USA,,American,Innovation
+1891,,First public old-age pension system,,,,,,,DEU,,,Politics
+1892,,Smog Event,,Died:,,,,,"51.507351, -0.127758",,British,
+1892,,Last Great Outbreak of cholera in Europe,,,,,,,Germany,,,Health
+1893,,Women given the vote in national elections,,,,,,,NZL,,British,Politics; Women
+1894,,"Women given the vote, and the right to stand for Parliament",,,,,,,"-30.000232, 136.209155",,British,
+1894,,Franco-Russian Alliance announced,,,,,,,FRA; DEU; RUS,,French,Politics 
+1894,,Royal Commission on Opium,irst Opium War; Second Opium War; China and Britain agree to stop the opium trade,,,,,,GBR; CHN; IND,,British,Opium
+1895,,Wilhelm Roentgen develops X-rays,,,,,,Confirmed http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,DEU,,,Innovation
+1895,,Studies in Hysteria,,Josef Breuer and Sigmund Frued,,,,,???,,,Women
+1897,,Underground system opens,,,,,,,"42.360082, -71.05888",,American,Innovation
+1898,,Flashbulb photography,,,,,,,,,,Innovation
+1899,,The Tape Recorder is developed,,Valdermar Poulsen,,,,,DNK,,,Innovation
+1899/10/10,1902,Second Boer War,,,,,,,Britain; South Africa; Netherlands; Africa,,British,War
+1900,,World Population is roughly 1.7 Billion,,,,,,,WORLD,,,Major
+22/01/1901,,"Queen Victoria dies, succeeded by Edward VII",,,,,,,GBR,,British,Monarchy
+1/01/1901,,The Federation of Australia,,,,,,,AUS,,British,Politics
+15/03/1905,,The Immigration Restriction Act known as the 'White Australian Policy' is passed,,,,,,,AUS,,,
+1902,,Women get the vote in Australia,,,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,AUS,,,Politics; Women
+1903,,First successful Powered flight,,The wright Brothers,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,AUS,,,Innovation
+1904,,Entente Cordial,,,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,FRA; GBR,,French,Politics 
+1905,,Albert Einstein published his paper on The Special Theory of Relativity,,,,,,,DEU,,,Innovation; Science
+1905,,Women get the vote ,,,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,FIN,,Dutch,Politics; Women
+1905,,Albert Einstein develops E=mc2 equarion,,,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,DEU,,,Innovation; Science
+1907,,The helicopter is invented,,Paul Corny,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,FRA ,,French,Innovation
+1907,,Colour Photography is invented,,by Auguste and Louis Lumiere,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,FRA,,French,Innovation
+1908,,Canberra is selected as Australia's capital,,,,,,,"-35.307500, 149.124417",,,
+1910,,South Africa gains independence from Britain,,,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,ZAF; GBR,,British,Colonisation
+1910,,China and Britain agree to stop the opium trade,First Opium War; Second Opium War; Royal Commission on Opium,,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,GBR; CHN; IND,,British,Opium
+1911,,The Northern Territory is created as a Australian State,,,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,"-19.491411, 132.55096",,,Colonisation
+1913,,Women get the vote,,,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,NOR,,Dutch,Politics; Women
+1914,,Archduke Franz Ferdinand and his wife are assassinated,,by Gavrilo Prinip,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,"SRB; 43.826143, 18.305567",,,War
+1914,,Austria-Hungary declares war upon Serbia,,Russia moblizes its army in defence,,,,http://resources.amdigital.co.uk.ezproxy.library.uq.edu.au/eo/time/,RUS; AUT; HUN,,,War
+1914,,World War One begins,,,,,,,FRA; DEU; AUT; GBR; NLD; USA; RUS; IND; Africa; ITA; TUR; JPN; CAN; AUS; NZL; SWE; DEN; FIN; NOR,,,War

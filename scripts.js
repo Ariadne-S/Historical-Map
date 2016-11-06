@@ -242,7 +242,7 @@ function displayErrors(result)
 }
 		
 function GetLocForCode(alpha3)
-{
+{ 
 	var alpha2 = codeMap[alpha3];
 	var location = alpha2toLatLong[alpha2.toLowerCase()];
 	return {

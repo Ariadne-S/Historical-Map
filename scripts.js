@@ -223,16 +223,6 @@ function displayErrors(result)
 		body.append($("<div class='error'/>").text(result.messages[i]));
 	}
 }
-		
-function GetLocForCode(alpha3)
-{ 
-	var alpha2 = codeMap[alpha3];
-	var location = alpha2toLatLong[alpha2.toLowerCase()];
-	return {
-		latitude: parseFloat(location[0]),
-		longitude: parseFloat(location[1])
-	};
-}
 
 function parseDate(dateString, needed) {
 	
@@ -343,6 +333,7 @@ function updateTimeline(timelineEvents) {
 	var additionalOptions = {
 		initial_zoom: 6,
 		dragging: true,
+		start_at_slide: 0
 	};
 
 	var timeline = new TL.Timeline('timeline-embed', timeline_json, additionalOptions);
@@ -454,6 +445,16 @@ function resetEventCountryColour()
 		}
 	}
 	_map.updateChoropleth(prevColors);
+}
+
+function splitUpLocations(locations) {
+	var parts = locations.split(";");
+	
+	for (var i = 0; i < parts.length; i++) {
+		parts[i] = parts[i].trim();
+	}
+
+	return parts.filter(function (x) { return (x != null && x != "") });
 }
 
 function displayEventOnMap(eventData)
@@ -627,6 +628,61 @@ function playSlideShow() {
 	timerId = setTimeout(playSlideShow, 1000);
 }
 
+function GetLocForCode(code)
+{
+	var location = countryToLatLong[code];
+	return {
+		latitude: parseFloat(location[0]),
+		longitude: parseFloat(location[1])
+	};
+}
+
+function TryLoad()
+{
+	if (countryToLatLong && rawEvents && _empireData) {
+		var result = validateData(rawEvents, _map);
+		if (result.isValid) {
+			populateTimeline(rawEvents);
+		} else {
+			displayErrors(result);			
+		}
+	}
+}
+
+function beginLoadingFiles() {
+
+	var altFile = location.search != null && location.search != "";
+	var eventFile = altFile ? "eventDataNap.csv" : "eventData.csv";
+
+	var results = Papa.parse(eventFile, {
+		download: true,
+		header: true,
+		skipEmptyLines: true,
+
+		complete: function(results) {
+			rawEvents = results.data;
+			TryLoad();
+		}
+	});
+
+	$.getJSON("country-codes.json", function(data) {
+		
+		countryToLatLong = data;
+		TryLoad();
+	});
+
+	Papa.parse("Empires.csv", {
+		download: true,
+		header: true,
+		skipEmptyLines: true,
+
+		complete: function(empireData) {
+			_empireData = empireData.data;
+			TryLoad();
+		}
+	});
+}
+
 $(function() {
 
 	$("#play-button").click(function () {
@@ -776,5 +832,7 @@ $(function() {
 
 		updatePan(0, 0, 1);
 	});
+
+	beginLoadingFiles();
 
 });

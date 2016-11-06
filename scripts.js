@@ -97,10 +97,10 @@ function validateData(rawEvents, map)
 		NameToCodeMap[codeAndName.name.toLowerCase()] = codeAndName.id;
 	}
 
-	function validateCodes(codes) {
+	function validateCodes(codes, lineNumber) {
 		var parts = splitUpLocations(codes);
 
-		for (var j = 1; j < parts.length; j++) {
+		for (var j = 0; j < parts.length; j++) {
 			var part = parts[j];
 			if (part.match(/[a-z]/i)) {
 				if (part.length == 3) {
@@ -122,18 +122,48 @@ function validateData(rawEvents, map)
 
 	}
 
-	for (var i = 1; i < rawEvents.length; i++) {
-		var record = rawEvents[i];
-	
-		if (record.Location.toLowerCase() == "world") {
-			record.Location = allCodes.map(function(x) { return x.id; }).join(";");
-			
-		} else if (record.Location.toLowerCase() == "prussia") {
-			record.Location = ["DEU", "POL"].join(";");
+	function expandParts(parts)
+	{
+		var allTheParts = [];
+		for (var i = 0; i < parts.length; i++) {
+			var part = parts[i].toLowerCase();
+			var newParts = [];
+
+			if (part == "world") {
+				newParts = allCodes.map(function(x) { return x.id; });	
+			} else if (part == "prussia") {
+				newParts = ["DEU", "POL"];
+			} else if (part == "scandinavia") {
+				newParts = ["FIN", "DNK", "SWE", "NOR"];
+			} else if (part == "south america") {
+				newParts = ["ARG", "BOL", "BRA", "CHL", "COL", "ECU", "GUY", "PRY", "PER", "SUR", "URY", "VEN"];
+			} else if (part == "central america") {
+				newParts = ["BLZ", "CRI", "SLV", "GTM","HND","NIC", "PAN"];
+			} else {
+				newParts = [part.toUpperCase()];
+			}
+
+			allTheParts = allTheParts.concat(newParts);
 		}
 
-		validateCodes(record.Location);
-		validateCodes(record.Influences);
+		return allTheParts;
+	}
+
+	for (var i = 1; i < rawEvents.length; i++) {
+		var record = rawEvents[i];
+		var lineNumber = i + 2;
+
+		var rawLocation = record.Location.toLowerCase();
+		var locationParts = splitUpLocations(rawLocation);
+		locationParts = expandParts(locationParts);
+		record.Location = locationParts.join(";");
+		validateCodes(record.Location, lineNumber);
+
+		var rawInfluences = record.Influences.toLowerCase();
+		var influencesParts = splitUpLocations(rawInfluences);
+		influencesParts = expandParts(influencesParts);
+		record.Influences = influencesParts.join(";");
+		validateCodes(record.Influences, lineNumber);
 	}
 
 

@@ -4,8 +4,7 @@
 // Setup all our data
 
 var rawEvents = null;
-var alpha2toLatLong = null;
-var codeMap = null;
+var countryToLatLong = null;
 
 var allEvents = null;
 var idLookup = null;
@@ -30,65 +29,7 @@ if (!String.prototype.format) {
   };
 }
 
-var altFile = location.search != null && location.search != "";
-var eventFile = altFile ? "eventDataNap.csv" : "eventData.csv";
-
-var results = Papa.parse(eventFile, {
-	download: true,
-	header: true,
-	skipEmptyLines: true,
-
-	complete: function(results) {
-		rawEvents = results.data;
-		TryLoad();
-	}
-});
-
-Papa.parse("code-map.csv", {
-	download: true,
-	header: true,
-	skipEmptyLines: true,
-
-	complete: function(mappingData) {
-		mappingData = mappingData.data;
-		
-		codeMap = {};
-		for (var i = 0; i < mappingData.length; i++) {
-			codeMap[mappingData[i].alpha3] = mappingData[i].alpha2;
-		}
-		TryLoad();
-	}
-});
-
-$.getJSON("countrycode-latlong-array.json", function(data) {
-	alpha2toLatLong = data;
-	TryLoad();
-});
-
-Papa.parse("Empires.csv", {
-	download: true,
-	header: true,
-	skipEmptyLines: true,
-
-	complete: function(empireData) {
-		_empireData = empireData.data;
-		TryLoad();
-	}
-});
-
-function TryLoad()
-{
-	if (alpha2toLatLong && codeMap && rawEvents && _empireData) {
-		var result = validateData(rawEvents);
-		if (result.isValid) {
-			populateTimeline(rawEvents);
-		} else {
-			displayErrors(result);			
-		}
-	}
-}
-
-function validateData(rawEvents)
+function validateData(rawEvents, map)
 {
 	var result = {
 		messages: [],
@@ -147,10 +88,52 @@ function validateData(rawEvents)
 	}
 
 	// Codes
+	var codeMap = {};
+	var NameToCodeMap = {};
+	var allCodes = _map.worldTopo.objects.world.geometries.map(function(x) { return { id: x.id, name: x.properties.name }; });
+	for (var i = 1; i < allCodes.length; i++) {
+		var codeAndName = allCodes[i];
+		codeMap[codeAndName.id] = true;
+		NameToCodeMap[codeAndName.name.toLowerCase()] = codeAndName.id;
+	}
+
+	function validateCodes(codes) {
+		var parts = splitUpLocations(codes);
+
+		for (var j = 1; j < parts.length; j++) {
+			var part = parts[j];
+			if (part.match(/[a-z]/i)) {
+				if (part.length == 3) {
+					if (codeMap[part]) {
+						continue;
+					}
+				}
+
+				var attempt = NameToCodeMap[part.toLowerCase()];
+				var suggestion = "";
+
+				if (attempt) {
+					suggestion = " (Did you mean to use the code {0}?)".format(attempt);				
+				}
+
+				addError("Line {0}: Location has a invalid country code: {1} {2}".format(lineNumber, part, suggestion));
+			}
+		}
+
+	}
 
 	for (var i = 1; i < rawEvents.length; i++) {
 		var record = rawEvents[i];
 	
+		if (record.Location.toLowerCase() == "world") {
+			record.Location = allCodes.map(function(x) { return x.id; }).join(";");
+			
+		} else if (record.Location.toLowerCase() == "prussia") {
+			record.Location = ["DEU", "POL"].join(";");
+		}
+
+		validateCodes(record.Location);
+		validateCodes(record.Influences);
 	}
 
 
@@ -294,7 +277,6 @@ function populateTimeline(data) {
 	var britishIndex = 0;
 	var timelineEvents = allEvents.map(function (row) {
 		
-		//mark
 		row.id = rowId++;
 		idLookup[row.Title.toLowerCase()] = row.id;
 
@@ -361,13 +343,11 @@ function updateTimeline(timelineEvents) {
 	var additionalOptions = {
 		initial_zoom: 6,
 		dragging: true,
-		start_at_slide: 2
 	};
 
 	var timeline = new TL.Timeline('timeline-embed', timeline_json, additionalOptions);
 
 	timeline.on("change", function(data) {
-		//mark
 		console.log(data.unique_id);
 
 		var id = parseInt(data.unique_id);
@@ -530,8 +510,6 @@ function displayEventOnMap(eventData)
 						console.log("Looked up id: " + id);
 						_timeline.goToId(id.toString());
 					}));
-
-			//mark
 		});
 
 	var eventElement = $("<ul></ul>");
@@ -575,16 +553,6 @@ function displayEventOnMap(eventData)
 	}
 
 	// next
-
-	function splitUpLocations(locations) {
-		var parts = locations.split(";");
-		
-		for (var i = 0; i < parts.length; i++) {
-			parts[i] = parts[i].trim();
-		}
-
-		return parts;
-	}
 	
 	function applyCountryColours(choropleth, parts, colour) {
 		for (var i = 0; i < parts.length; i++) {

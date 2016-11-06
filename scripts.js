@@ -18,9 +18,6 @@ var _empireData =null;
 
 var selections = {};
 
-var altFile = location.search != null && location.search != "";
-var eventFile = altFile ? "eventDataNap.csv" : "eventData.csv";
-
 if (!String.prototype.format) {
   String.prototype.format = function() {
     var args = arguments;
@@ -32,6 +29,9 @@ if (!String.prototype.format) {
     });
   };
 }
+
+var altFile = location.search != null && location.search != "";
+var eventFile = altFile ? "eventDataNap.csv" : "eventData.csv";
 
 var results = Papa.parse(eventFile, {
 	download: true,
@@ -45,25 +45,25 @@ var results = Papa.parse(eventFile, {
 });
 
 Papa.parse("code-map.csv", {
-				download: true,
-				header: true,
-				skipEmptyLines: true,
+	download: true,
+	header: true,
+	skipEmptyLines: true,
 
-				complete: function(mappingData) {
-					mappingData = mappingData.data;
-					
-					codeMap = {};
-					for (var i = 0; i < mappingData.length; i++) {
-						codeMap[mappingData[i].alpha3] = mappingData[i].alpha2;
-					}
-					TryLoad();
-				}
-			});
+	complete: function(mappingData) {
+		mappingData = mappingData.data;
+		
+		codeMap = {};
+		for (var i = 0; i < mappingData.length; i++) {
+			codeMap[mappingData[i].alpha3] = mappingData[i].alpha2;
+		}
+		TryLoad();
+	}
+});
 
 $.getJSON("countrycode-latlong-array.json", function(data) {
-			alpha2toLatLong = data;
-			TryLoad();
-		});
+	alpha2toLatLong = data;
+	TryLoad();
+});
 
 Papa.parse("Empires.csv", {
 	download: true,
@@ -147,6 +147,11 @@ function validateData(rawEvents)
 	}
 
 	// Codes
+
+	for (var i = 1; i < rawEvents.length; i++) {
+		var record = rawEvents[i];
+	
+	}
 
 
 	if (result.messages.length > 0) {
@@ -688,8 +693,6 @@ $(function() {
 
 	var mapWidth = 2000;
 	var mapHeight = 2000 * (2/3);
-
-	var gElem = null;
 
 	function updatePan(zoom, panX, panY, scale) {
 

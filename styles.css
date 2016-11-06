@@ -45,6 +45,18 @@ h5 {
 	float: right;
 }
 
+a, a:link, a:visited, a:hover
+{
+	color: #eee;
+	text-decoration: none;
+}
+
+a:hover
+{
+	color: #999;
+	text-decoration: none;
+}
+
 .menu-option {
 	float: left;
 	padding: 17pt;
@@ -106,12 +118,24 @@ h5 {
 	height: 75%;
 }
 
-.nap {
+a.nap,
+a.nap:link,
+a.nap:visited {
+	color: #222;
+}
+
+a.nap:hover{
 	color: #797979;
 }
 
-.nap:hover{
-	color:#222;
+a.link,
+a.link:link,
+a.link:visited {
+	color: #222;
+}
+
+a.link:hover{
+	color: #797979;
 }
 .super {
 	vertical-align: super;

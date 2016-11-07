@@ -364,7 +364,7 @@ function updateTimeline(timelineEvents) {
 	};
 
 	var additionalOptions = {
-		initial_zoom: 6,
+		initial_zoom: 1,
 		dragging: true,
 		start_at_slide: 0
 	};

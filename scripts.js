@@ -90,8 +90,11 @@ function validateData(rawEvents, map)
 	// Codes
 	var codeMap = {};
 	var NameToCodeMap = {};
-	var allCodes = _map.worldTopo.objects.world.geometries.map(function(x) { return { id: x.id, name: x.properties.name }; });
-	for (var i = 1; i < allCodes.length; i++) {
+	var allCodes = _map.worldTopo.objects.world.geometries
+		.filter(function(x) { return x.id != "-99"; })
+		.map(function(x) { return { id: x.id, name: x.properties.name }; });
+
+	for (var i = 0; i < allCodes.length; i++) {
 		var codeAndName = allCodes[i];
 		codeMap[codeAndName.id] = true;
 		NameToCodeMap[codeAndName.name.toLowerCase()] = codeAndName.id;

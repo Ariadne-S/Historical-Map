@@ -119,7 +119,7 @@ function validateData(rawEvents, map)
 					suggestion = " (Did you mean to use the code {0}?)".format(attempt);				
 				}
 
-				addError("Line {0}: Location has a invalid country code: {1} {2}".format(lineNumber, part, suggestion));
+				addError("Line {0}: Location has an invalid country code: {1} {2}".format(lineNumber, part, suggestion));
 			}
 		}
 

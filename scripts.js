@@ -560,7 +560,7 @@ function displayEventOnMap(eventData)
 
 	if (eventData.Image != "" && eventData.Image != null) {
 		contents
-			.append($("<img/>").attr('src', "/images/" + eventData.Image));
+			.append($("<img/>").attr('src', "/Images/" + eventData.Image));
 	}
 
 	contents
@@ -682,9 +682,8 @@ function TryLoad()
 	}
 }
 
-function beginLoadingFiles() {
+function beginLoadingFiles(altFile) {
 
-	var altFile = location.search != null && location.search != "";
 	var eventFile = altFile ? "eventDataNap.csv" : "eventData.csv";
 
 	var results = Papa.parse(eventFile, {
@@ -866,6 +865,14 @@ $(function() {
 		updatePan(0, 0, 1);
 	});
 
-	beginLoadingFiles();
+
+
+	var altFile = location.search != null && location.search != "";
+
+	if (altFile) {
+		$("#subtitle").text("The Napoleonic Wars");
+	}
+
+	beginLoadingFiles(altFile);
 
 });
